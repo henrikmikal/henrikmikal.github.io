@@ -29,6 +29,7 @@
       color: var(--text);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.75;
+      overflow-x: hidden;
     }
 
     a {
@@ -65,6 +66,12 @@
       color: var(--soft);
     }
 
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .back-link {
       display: inline-flex;
       align-items: center;
@@ -73,8 +80,21 @@
       font-size: 0.95rem;
     }
 
-    .back-link:hover {
+    .back-link:hover,
+    .lang-toggle:hover {
       color: var(--text);
+      border-color: #4b4b52;
+    }
+
+    .lang-toggle {
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.03);
+      color: var(--soft);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font: inherit;
+      cursor: pointer;
+      transition: 0.2s ease;
     }
 
     .hero {
@@ -152,6 +172,18 @@
       .card {
         padding: 20px;
       }
+
+      .topbar-inner {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 10px 0;
+      }
+
+      .topbar-actions {
+        width: 100%;
+        justify-content: space-between;
+      }
     }
   </style>
 </head>
@@ -159,26 +191,33 @@
   <header class="topbar">
     <div class="wrap topbar-inner">
       <a href="index.html" class="brand">HMW</a>
-      <a href="index.html#about" class="back-link">← Tilbake til forsiden</a>
+      <div class="topbar-actions">
+        <a href="index.html#about" class="back-link" data-no="← Tilbake til forsiden" data-en="← Back to home">← Tilbake til forsiden</a>
+        <button class="lang-toggle" id="langToggle">NO / EN</button>
+      </div>
     </div>
   </header>
 
   <main class="wrap">
     <section class="hero">
-      <div class="eyebrow">Mer om meg</div>
-      <h1>Hvem jeg er, og hvordan reisen min har formet meg</h1>
-      <p class="lead">
+      <div class="eyebrow" data-no="Mer om meg" data-en="More about me">Mer om meg</div>
+
+      <h1 data-no="Hvem jeg er, og hvordan reisen min har formet meg" data-en="Who I am, and how my journey has shaped me">
+        Hvem jeg er, og hvordan reisen min har formet meg
+      </h1>
+
+      <p class="lead" data-no="Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på." data-en="This page is less about bullet points and more about the person behind the portfolio. Here I want to show more about who I am, what motivates me, and how the journey from electrician to power engineering student has shaped the way I think.">
         Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på.
       </p>
     </section>
 
     <section class="section">
       <div class="card">
-        <h2>Min bakgrunn</h2>
-        <p>
+        <h2 data-no="Min bakgrunn" data-en="My background">Min bakgrunn</h2>
+        <p data-no="Jeg har bakgrunn fra elektrikerfaget og flere års erfaring med installasjon, feilsøking, idriftsettelse og teknisk dokumentasjon. Den praktiske erfaringen har gitt meg en arbeidsform der jeg er opptatt av kvalitet, struktur og løsninger som faktisk fungerer i praksis." data-en="I come from the electrical trade and have several years of experience with installation, troubleshooting, commissioning and technical documentation. That practical background has given me a way of working where I focus on quality, structure and solutions that actually work in real systems.">
           Jeg har bakgrunn fra elektrikerfaget og flere års erfaring med installasjon, feilsøking, idriftsettelse og teknisk dokumentasjon. Den praktiske erfaringen har gitt meg en arbeidsform der jeg er opptatt av kvalitet, struktur og løsninger som faktisk fungerer i praksis.
         </p>
-        <p>
+        <p data-no="Overgangen til elkraftstudiet ved NTNU Gjøvik handler for meg ikke om å forlate det praktiske, men om å bygge videre på det. Jeg ønsker å kombinere håndverksforståelse med ingeniørfaglig analyse for å bli bedre rustet til å arbeide med kraftsystemer, energi og tekniske utfordringer på et høyere nivå." data-en="For me, the transition to Electrical Power Engineering at NTNU Gjøvik is not about leaving practical work behind, but about building on it. I want to combine hands-on understanding with engineering analysis to become better equipped to work with power systems, energy and technical challenges at a higher level.">
           Overgangen til elkraftstudiet ved NTNU Gjøvik handler for meg ikke om å forlate det praktiske, men om å bygge videre på det. Jeg ønsker å kombinere håndverksforståelse med ingeniørfaglig analyse for å bli bedre rustet til å arbeide med kraftsystemer, energi og tekniske utfordringer på et høyere nivå.
         </p>
       </div>
@@ -186,11 +225,11 @@
 
     <section class="section">
       <div class="card">
-        <h2>Hvordan jeg er som person</h2>
-        <p>
+        <h2 data-no="Hvordan jeg er som person" data-en="Who I am as a person">Hvordan jeg er som person</h2>
+        <p data-no="Jeg vil beskrive meg selv som nysgjerrig, sosial og målrettet. Jeg liker å forstå hvordan ting fungerer, enten det handler om tekniske systemer, nye fagområder eller praktiske løsninger. Den nysgjerrigheten gjør også at jeg sjelden er fornøyd med bare å vite hva som virker, jeg vil helst forstå hvorfor det virker." data-en="I would describe myself as curious, social and driven. I enjoy understanding how things work, whether it is technical systems, new subject areas or practical solutions. That curiosity also means I am rarely satisfied with only knowing what works, I usually want to understand why it works.">
           Jeg vil beskrive meg selv som nysgjerrig, sosial og målrettet. Jeg liker å forstå hvordan ting fungerer, enten det handler om tekniske systemer, nye fagområder eller praktiske løsninger. Den nysgjerrigheten gjør også at jeg sjelden er fornøyd med bare å vite hva som virker, jeg vil helst forstå hvorfor det virker.
         </p>
-        <p>
+        <p data-no="Samtidig trives jeg godt sammen med andre. Jeg liker samarbeid, gode samtaler og å kunne diskutere ideer, løsninger og utfordringer med folk rundt meg. For meg handler det ikke bare om å komme fram til et svar, men også om å lære gjennom prosessen." data-en="At the same time, I genuinely enjoy being around other people. I value collaboration, good conversations and the opportunity to discuss ideas, solutions and challenges with the people around me. For me, it is not only about reaching an answer, but also about learning through the process.">
           Samtidig trives jeg godt sammen med andre. Jeg liker samarbeid, gode samtaler og å kunne diskutere ideer, løsninger og utfordringer med folk rundt meg. For meg handler det ikke bare om å komme fram til et svar, men også om å lære gjennom prosessen.
         </p>
       </div>
@@ -198,22 +237,45 @@
 
     <section class="section">
       <div class="card">
-        <h2>Studiet og reisen videre</h2>
-        <p>
+        <h2 data-no="Studiet og reisen videre" data-en="My studies and the road ahead">Studiet og reisen videre</h2>
+        <p data-no="Studiet er en viktig del av reisen min, og jeg ønsker at denne nettsiden også skal få vise utviklingen underveis. Derfor vil jeg bruke den til å samle prosjekter, refleksjoner og erfaringer fra tiden som student, ikke bare som en portefølje, men også som et bilde av hvordan jeg utvikler meg faglig og personlig." data-en="My studies are an important part of my journey, and I want this website to show that development over time. That is why I want to use it to collect projects, reflections and experiences from my time as a student, not only as a portfolio, but also as a picture of how I grow professionally and personally.">
           Studiet er en viktig del av reisen min, og jeg ønsker at denne nettsiden også skal få vise utviklingen underveis. Derfor vil jeg bruke den til å samle prosjekter, refleksjoner og erfaringer fra tiden som student, ikke bare som en portefølje, men også som et bilde av hvordan jeg utvikler meg faglig og personlig.
         </p>
-        <p>
+        <p data-no="Målet mitt er å bygge en profil som viser både hvor jeg kommer fra, hva jeg arbeider med nå, og hvor jeg vil videre. Jeg tror de beste løsningene ofte kommer når praktisk erfaring og teoretisk forståelse får spille sammen." data-en="My goal is to build a profile that shows both where I come from, what I am working on now, and where I want to go next. I believe the best solutions often come when practical experience and theoretical understanding are allowed to work together.">
           Målet mitt er å bygge en profil som viser både hvor jeg kommer fra, hva jeg arbeider med nå, og hvor jeg vil videre. Jeg tror de beste løsningene ofte kommer når praktisk erfaring og teoretisk forståelse får spille sammen.
         </p>
-        <p class="quote">
+        <p class="quote" data-no="Jeg prøver å bygge videre på det jeg allerede kan, samtidig som jeg utfordrer meg selv til å forstå mer, lære mer og skape bedre løsninger." data-en="I try to build on what I already know while constantly challenging myself to understand more, learn more and create better solutions.">
           Jeg prøver å bygge videre på det jeg allerede kan, samtidig som jeg utfordrer meg selv til å forstå mer, lære mer og skape bedre løsninger.
         </p>
       </div>
     </section>
 
-    <footer>
+    <footer data-no="Henrik Mikal Wilhelmsen · Mer om meg" data-en="Henrik Mikal Wilhelmsen · More about me">
       Henrik Mikal Wilhelmsen · Mer om meg
     </footer>
   </main>
+
+  <script>
+    const toggle = document.getElementById('langToggle');
+    let lang = 'no';
+
+    function applyLanguage(nextLang) {
+      document.documentElement.lang = nextLang === 'no' ? 'no' : 'en';
+
+      document.querySelectorAll('[data-no]').forEach((el) => {
+        const newText = nextLang === 'no' ? el.getAttribute('data-no') : el.getAttribute('data-en');
+        if (newText !== null) {
+          el.textContent = newText;
+        }
+      });
+
+      toggle.textContent = nextLang === 'no' ? 'NO / EN' : 'EN / NO';
+      lang = nextLang;
+    }
+
+    toggle.addEventListener('click', () => {
+      applyLanguage(lang === 'no' ? 'en' : 'no');
+    });
+  </script>
 </body>
 </html>
