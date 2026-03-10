@@ -9,6 +9,7 @@
     :root {
       --bg: #060606;
       --panel: #0f0f10;
+      --panel-2: #151517;
       --text: #f4f4f2;
       --muted: #a2a2a7;
       --line: #232327;
@@ -18,18 +19,13 @@
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      background: var(--bg);
+      background: radial-gradient(circle at top, rgba(255,255,255,0.07), transparent 28%), var(--bg);
       color: var(--text);
       font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       line-height: 1.6;
-      overflow-x: hidden;
     }
 
     a {
@@ -47,9 +43,9 @@
       top: 0;
       left: 0;
       right: 0;
-      z-index: 50;
-      backdrop-filter: blur(14px);
-      background: rgba(6, 6, 6, 0.18);
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(6, 6, 6, 0.22);
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
@@ -85,8 +81,8 @@
     }
 
     .lang-toggle {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      background: transparent;
       color: var(--soft);
       border-radius: 999px;
       padding: 10px 14px;
@@ -96,43 +92,11 @@
     }
 
     .hero {
-      position: relative;
       min-height: 100vh;
-      width: 100%;
+      padding: 0;
+      position: relative;
       overflow: hidden;
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(6,6,6,0.96) 0%,
-          rgba(6,6,6,0.90) 18%,
-          rgba(6,6,6,0.76) 32%,
-          rgba(6,6,6,0.46) 46%,
-          rgba(6,6,6,0.16) 60%,
-          rgba(6,6,6,0.02) 76%,
-          rgba(6,6,6,0.00) 100%
-        ),
-        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2200&q=80') center center / cover no-repeat;
-      transform: scale(1.02);
-    }
-
-    .hero-overlay {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-copy {
-      width: min(620px, calc(100% - 40px));
-      margin-left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
-      padding-top: 110px;
-      padding-bottom: 70px;
+      margin-bottom: 44px;
     }
 
     .eyebrow,
@@ -144,24 +108,24 @@
     }
 
     h1 {
-      font-size: clamp(3.2rem, 7vw, 6.6rem);
-      line-height: 0.95;
+      font-size: clamp(2.8rem, 6vw, 5.6rem);
+      line-height: 0.98;
       margin: 18px 0 0;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.04em;
       max-width: 820px;
     }
 
     .lead {
-      margin-top: 24px;
-      font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+      margin-top: 28px;
+      font-size: clamp(1.1rem, 1.8vw, 1.45rem);
       color: var(--soft);
-      max-width: 640px;
+      max-width: 760px;
     }
 
     .intro {
-      margin-top: 16px;
-      max-width: 560px;
-      color: #c0c0c5;
+      margin-top: 18px;
+      max-width: 760px;
+      color: var(--muted);
       font-size: 1rem;
     }
 
@@ -179,7 +143,7 @@
       justify-content: center;
       border-radius: 999px;
       padding: 13px 18px;
-      border: 1px solid rgba(255,255,255,0.14);
+      border: 1px solid var(--line);
       transition: 0.2s ease;
     }
 
@@ -197,16 +161,76 @@
     .button.secondary,
     .chip {
       color: var(--soft);
-      background: rgba(255,255,255,0.03);
+      background: transparent;
     }
 
-    main {
+    .hero-card,
+    .card,
+    .contact-box {
+      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.018));
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius);
+    }
+
+    .hero-card {
+      padding: 22px;
+      min-height: 100%;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(6,6,6,0.96) 0%, rgba(6,6,6,0.88) 22%, rgba(6,6,6,0.68) 38%, rgba(6,6,6,0.30) 52%, rgba(6,6,6,0.08) 64%, rgba(6,6,6,0.02) 100%),
+        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80') right center / cover no-repeat;
+    }
+
+    .hero-overlay {
       position: relative;
       z-index: 2;
-      background: var(--bg);
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 0 72px;
     }
 
-    .content-section {
+    .hero-copy {
+      max-width: 620px;
+      padding-right: 24px;
+    }
+
+    .hero-visual {
+      height: 240px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.05);
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01));
+      margin-bottom: 18px;
+    }
+
+    .meta-row {
+      padding-top: 14px;
+      margin-top: 14px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .meta-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      color: var(--muted);
+    }
+
+    .meta-value {
+      margin-top: 6px;
+      color: var(--soft);
+      font-size: 0.96rem;
+    }
+
+    section {
       padding: 26px 0 10px;
     }
 
@@ -228,20 +252,8 @@
       margin-top: 20px;
     }
 
-    .grid-3 {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .card,
-    .contact-box {
-      background: linear-gradient(180deg, rgba(255,255,255,0.035), rgba(255,255,255,0.018));
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: var(--radius);
-    }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 
     .card {
       padding: 22px;
@@ -291,6 +303,8 @@
       font-size: 0.92rem;
     }
 
+    .hidden { display: none; }
+
     @media (max-width: 960px) {
       .grid-3,
       .grid-2 {
@@ -307,36 +321,22 @@
 
       .hero-overlay {
         min-height: 88vh;
+        padding: 108px 0 40px;
         align-items: end;
       }
 
       .hero-copy {
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        padding-top: 100px;
-        padding-bottom: 44px;
+        max-width: 100%;
+        padding-right: 0;
       }
 
       .hero-media {
         background:
-          linear-gradient(
-            to top,
-            rgba(6,6,6,0.92) 0%,
-            rgba(6,6,6,0.72) 22%,
-            rgba(6,6,6,0.36) 50%,
-            rgba(6,6,6,0.12) 76%,
-            rgba(6,6,6,0.04) 100%
-          ),
+          linear-gradient(to top, rgba(6,6,6,0.92) 0%, rgba(6,6,6,0.66) 26%, rgba(6,6,6,0.26) 54%, rgba(6,6,6,0.10) 100%),
           url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1800&q=80') center center / cover no-repeat;
       }
 
       h1 {
-        max-width: 100%;
-        font-size: clamp(2.8rem, 11vw, 4.4rem);
-      }
-
-      .lead,
-      .intro {
         max-width: 100%;
       }
     }
@@ -357,180 +357,121 @@
     </div>
   </header>
 
-  <section class="hero" id="top">
-    <div class="hero-media"></div>
-    <div class="hero-overlay">
-      <div class="hero-copy">
-        <div class="eyebrow" data-no="E-portefølje og personlig nettside" data-en="E-portfolio and personal website">
-          E-portefølje og personlig nettside
-        </div>
-
-        <h1>Henrik Mikal Wilhelmsen</h1>
-
-        <div class="lead" data-no="Elkraftingeniørstudent med fagbrev som elektriker." data-en="Electrical power engineering student with a trade certificate as an electrician.">
-          Elkraftingeniørstudent med fagbrev som elektriker.
-        </div>
-
-        <p class="intro" data-no="Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger." data-en="I combine practical experience in installation, troubleshooting and commissioning with engineering development in power systems, energy and technical solutions.">
-          Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
-          <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <main>
-    <section class="content-section" id="about">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label" data-no="Om meg" data-en="About">Om meg</div>
-        </div>
-        <p class="section-copy" data-no="Jeg studerer elkraft og bærekraftig energi ved NTNU Gjøvik og bygger videre på flere års erfaring fra elektrikerfaget. Jeg har arbeidet med boliginstallasjoner, rehabilitering, elbilladere, feilsøking, idriftsettelse og teknisk dokumentasjon. På nettsiden samler jeg prosjekter og arbeid som viser hvordan jeg kombinerer praktisk forståelse med ingeniørfaglig analyse." data-en="I study Electrical Power Engineering and Sustainable Energy at NTNU Gjøvik, building on several years of experience from the electrical trade. My background includes residential installations, rehabilitation work, EV chargers, troubleshooting, commissioning and technical documentation. This site collects projects and work that show how I combine practical understanding with engineering analysis.">
-          Jeg studerer elkraft og bærekraftig energi ved NTNU Gjøvik og bygger videre på flere års erfaring fra elektrikerfaget. Jeg har arbeidet med boliginstallasjoner, rehabilitering, elbilladere, feilsøking, idriftsettelse og teknisk dokumentasjon. På nettsiden samler jeg prosjekter og arbeid som viser hvordan jeg kombinerer praktisk forståelse med ingeniørfaglig analyse.
-        </p>
-      </div>
-    </section>
-
-    <section class="content-section" id="portfolio">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</div>
-        </div>
-        <p class="section-copy" data-no="Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser, arbeidsgivere og samarbeidspartnere." data-en="This section gathers work that shows progression, reflection and technical breadth. It is meant to serve both as academic documentation and as a professional front toward internships, employers and future collaborators.">
-          Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser, arbeidsgivere og samarbeidspartnere.
-        </p>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-tag" data-no="Studiearbeid" data-en="Coursework">Studiearbeid</div>
-            <h3 data-no="Ingeniørprosjekter" data-en="Engineering projects">Ingeniørprosjekter</h3>
-            <p data-no="Rapporter, analyser, beregninger og tekniske oppgaver fra studiet." data-en="Reports, analyses, calculations and technical coursework from my studies.">
-              Rapporter, analyser, beregninger og tekniske oppgaver fra studiet.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag" data-no="Teknologi" data-en="Technology">Teknologi</div>
-            <h3 data-no="Kode og systemer" data-en="Code and systems">Kode og systemer</h3>
-            <p data-no="Python, C, LaTeX, Multisim og tekniske løsninger med praktisk nytte." data-en="Python, C, LaTeX, Multisim and technical solutions with practical value.">
-              Python, C, LaTeX, Multisim og tekniske løsninger med praktisk nytte.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag" data-no="Utvikling" data-en="Development">Utvikling</div>
-            <h3 data-no="Refleksjon og progresjon" data-en="Reflection and growth">Refleksjon og progresjon</h3>
-            <p data-no="Hvordan jeg utvikler meg faglig, hva jeg lærer og hvor jeg vil videre." data-en="How I develop academically, what I learn and where I want to grow.">
-              Hvordan jeg utvikler meg faglig, hva jeg lærer og hvor jeg vil videre.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="projects">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label" data-no="Prosjekter" data-en="Projects">Prosjekter</div>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="card-tag">Arduino / Energi</div>
-            <h3 data-no="Tekniske energiprosjekter og styring" data-en="Technical energy projects and control systems">
-              Tekniske energiprosjekter og styring
-            </h3>
-            <p data-no="Arbeid med praktiske og teoretiske løsninger der energibruk, styring og teknisk funksjon kobles sammen." data-en="Work with practical and theoretical solutions where energy use, control and technical function are connected.">
-              Arbeid med praktiske og teoretiske løsninger der energibruk, styring og teknisk funksjon kobles sammen.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag" data-no="Kraftsystemer" data-en="Power systems">Kraftsystemer</div>
-            <h3 data-no="Analyse av kraftsystemer og nettløsninger" data-en="Power system and network analysis">
-              Analyse av kraftsystemer og nettløsninger
-            </h3>
-            <p data-no="Faglig arbeid med blant annet IT-nett, TN-nett, feilforhold og tekniske konsekvenser i elkraftsystemer." data-en="Academic work involving IT systems, TN systems, fault behaviour and technical consequences in electrical power systems.">
-              Faglig arbeid med blant annet IT-nett, TN-nett, feilforhold og tekniske konsekvenser i elkraftsystemer.
-            </p>
-          </article>
-
-          <article class="card">
-            <div class="card-tag" data-no="Dokumentasjon" data-en="Documentation">Dokumentasjon</div>
-            <h3 data-no="Teknisk dokumentasjon, rapporter og LaTeX" data-en="Technical documentation, reports and LaTeX">
-              Teknisk dokumentasjon, rapporter og LaTeX
-            </h3>
-            <p data-no="Profesjonelle rapporter med struktur, referanser, dokumentasjon og ingeniørfaglig presentasjon." data-en="Professional reports with structure, references, documentation and engineering presentation.">
-              Profesjonelle rapporter med struktur, referanser, dokumentasjon og ingeniørfaglig presentasjon.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="experience">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label" data-no="Erfaring" data-en="Experience">Erfaring</div>
-        </div>
-
-        <div class="grid-2">
-          <div class="list-box">
-            <p data-no="Fagbrev som elektriker med erfaring fra bolig og tekniske anlegg" data-en="Certified electrician with experience from residential and technical installations">
-              Fagbrev som elektriker med erfaring fra bolig og tekniske anlegg
-            </p>
+  <main class="wrap" id="top">
+    <section class="hero">
+      <div class="hero-media"></div>
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <div class="eyebrow" data-no="E-portefølje og personlig nettside" data-en="E-portfolio and personal website">E-portefølje og personlig nettside</div>
+          <h1>Henrik Mikal Wilhelmsen</h1>
+          <div class="lead" data-no="Elkraftingeniørstudent med fagbrev som elektriker." data-en="Electrical power engineering student with a trade certificate as an electrician.">
+            Elkraftingeniørstudent med fagbrev som elektriker.
           </div>
-
-          <div class="list-box">
-            <p data-no="Strukturert feilsøking med måleutstyr, verifikasjon og dokumentasjon" data-en="Structured troubleshooting using measuring equipment, verification and documentation">
-              Strukturert feilsøking med måleutstyr, verifikasjon og dokumentasjon
-            </p>
-          </div>
-
-          <div class="list-box">
-            <p data-no="Erfaring med konfigurering, testing og idriftsettelse av tekniske installasjoner" data-en="Experience with configuration, testing and commissioning of technical installations">
-              Erfaring med konfigurering, testing og idriftsettelse av tekniske installasjoner
-            </p>
-          </div>
-
-          <div class="list-box">
-            <p data-no="Verktøy: Python, C, LaTeX og Multisim" data-en="Tools: Python, C, LaTeX and Multisim">
-              Verktøy: Python, C, LaTeX og Multisim
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="section-label" data-no="Kontakt" data-en="Contact">Kontakt</div>
-        </div>
-
-        <div class="contact-box">
-          <p class="section-copy" data-no="Denne siden er en første versjon av min digitale portefølje. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert." data-en="This is the first version of my digital portfolio. The next step is to expand the project section, add a CV and make the content even more concrete and project based.">
-            Denne siden er en første versjon av min digitale portefølje. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert.
+          <p class="intro" data-no="Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger." data-en="I combine practical experience in installation, troubleshooting and commissioning with engineering development in power systems, energy and technical solutions.">
+            Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger.
           </p>
-
-          <div class="contact-links">
-            <a class="chip" href="https://www.linkedin.com/in/henrik-mikal-wilhelmsen-4a953136b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a class="chip" href="https://github.com/henrikmikal" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="chip" href="mailto:henrikmikal@gmail.com">henrikmikal@gmail.com</a>
-            <a class="chip" href="#" data-no="CV kommer snart" data-en="CV coming soon">CV kommer snart</a>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
+            <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
           </div>
         </div>
       </div>
     </section>
 
-    <footer class="wrap" data-no="Bygget med GitHub Pages og koblet til henrikmikalwilhelmsen.com." data-en="Built with GitHub Pages and connected to henrikmikalwilhelmsen.com.">
-      Bygget med GitHub Pages og koblet til henrikmikalwilhelmsen.com.
-    </footer>
+    <section id="about">
+      <div class="section-head">
+        <div class="section-label" data-no="Om meg" data-en="About">Om meg</div>
+      </div>
+      <p class="section-copy" data-no="Jeg studerer elkraft og bærekraftig energi ved NTNU Gjøvik og bygger videre på flere års erfaring fra elektrikerfaget. Jeg har arbeidet med boliginstallasjoner, rehabilitering, elbilladere, feilsøking, idriftsettelse og teknisk dokumentasjon. På nettsiden samler jeg prosjekter og arbeid som viser hvordan jeg kombinerer praktisk forståelse med ingeniørfaglig analyse." data-en="I study Electrical Power Engineering and Sustainable Energy at NTNU Gjøvik, building on several years of experience from the electrical trade. My background includes residential installations, rehabilitation work, EV chargers, troubleshooting, commissioning and technical documentation. This site collects projects and work that show how I combine practical understanding with engineering analysis.">
+        Jeg studerer elkraft og bærekraftig energi ved NTNU Gjøvik og bygger videre på flere års erfaring fra elektrikerfaget. Jeg har arbeidet med boliginstallasjoner, rehabilitering, elbilladere, feilsøking, idriftsettelse og teknisk dokumentasjon. På nettsiden samler jeg prosjekter og arbeid som viser hvordan jeg kombinerer praktisk forståelse med ingeniørfaglig analyse.
+      </p>
+      <div class="hero-actions" style="margin-top: 22px;">
+        <a class="button secondary" href="about.html" data-no="Mer om meg" data-en="More about me">Mer om meg</a>
+      </div>
+    </section>
+
+    <section id="portfolio">
+      <div class="section-head">
+        <div class="section-label" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</div>
+      </div>
+      <p class="section-copy" data-no="Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser, arbeidsgivere og samarbeidspartnere." data-en="This section gathers work that shows progression, reflection and technical breadth. It is meant to serve both as academic documentation and as a professional front toward internships, employers and future collaborators.">
+        Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser og arbeidsgivere.
+      </p>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-tag" data-no="Studiearbeid" data-en="Coursework">Studiearbeid</div>
+          <h3 data-no="Ingeniørprosjekter" data-en="Engineering projects">Ingeniørprosjekter</h3>
+          <p data-no="Rapporter, analyser, beregninger og tekniske oppgaver fra studiet." data-en="Reports, analyses, calculations and technical coursework from my studies.">Rapporter, analyser og tekniske oppgaver fra studiet.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag" data-no="Teknologi" data-en="Technology">Teknologi</div>
+          <h3 data-no="Kode og systemer" data-en="Code and systems">Kode og systemer</h3>
+          <p data-no="Python, C, LaTeX, Multisim og tekniske løsninger med praktisk nytte." data-en="Python, C, LaTeX, Multisim and technical solutions with practical value.">Arduino, Python og tekniske løsninger med praktisk nytte.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag" data-no="Utvikling" data-en="Development">Utvikling</div>
+          <h3 data-no="Refleksjon og progresjon" data-en="Reflection and growth">Refleksjon og progresjon</h3>
+          <p data-no="Hvordan jeg utvikler meg faglig, hva jeg lærer og hvor jeg vil videre." data-en="How I develop academically, what I learn and where I want to grow.">Hva jeg lærer, hvordan jeg tenker og hvor jeg vil videre.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head">
+        <div class="section-label" data-no="Prosjekter" data-en="Projects">Prosjekter</div>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-tag">Arduino / Energi</div>
+          <h3 data-no="Tekniske energiprosjekter og styring" data-en="Technical energy projects and control systems">Smart styring av varmtvannsbereder</h3>
+          <p data-no="Arbeid med praktiske og teoretiske løsninger der energibruk, styring og teknisk funksjon kobles sammen." data-en="Work with practical and theoretical solutions where energy use, control and technical function are connected.">Et prosjekt der strømpris, styring og energibruk kobles sammen i en praktisk løsning.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag" data-no="Kraftsystemer" data-en="Power systems">Kraftsystemer</div>
+          <h3 data-no="Analyse av kraftsystemer og nettløsninger" data-en="Power system and network analysis">Analyse av IT-nett og TN-nett</h3>
+          <p data-no="Faglig arbeid med blant annet IT-nett, TN-nett, feilforhold og tekniske konsekvenser i elkraftsystemer." data-en="Academic work involving IT systems, TN systems, fault behaviour and technical consequences in electrical power systems.">Faglig arbeid som sammenligner forsyningssystemer, feilforhold og tekniske konsekvenser.</p>
+        </article>
+        <article class="card">
+          <div class="card-tag" data-no="Dokumentasjon" data-en="Documentation">Dokumentasjon</div>
+          <h3 data-no="Teknisk dokumentasjon, rapporter og LaTeX" data-en="Technical documentation, reports and LaTeX">Teknisk dokumentasjon og LaTeX</h3>
+          <p data-no="Profesjonelle rapporter med struktur, referanser, dokumentasjon og ingeniørfaglig presentasjon." data-en="Professional reports with structure, references, documentation and engineering presentation.">Profesjonelle rapporter med struktur, referanser og ingeniørfaglig presentasjon.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head">
+        <div class="section-label" data-no="Erfaring" data-en="Experience">Erfaring</div>
+      </div>
+      <div class="grid-2">
+        <div class="list-box"><p data-no="Fagbrev som elektriker med erfaring fra bolig og tekniske anlegg" data-en="Certified electrician with experience from residential and technical installations">Praktisk erfaring fra elektrikerfaget</p></div>
+        <div class="list-box"><p data-no="Strukturert feilsøking med måleutstyr, verifikasjon og dokumentasjon" data-en="Structured troubleshooting using measuring equipment, verification and documentation">Teknisk forståelse av installasjon, feilsøking og dokumentasjon</p></div>
+        <div class="list-box"><p data-no="Erfaring med konfigurering, testing og idriftsettelse av tekniske installasjoner" data-en="Experience with configuration, testing and commissioning of technical installations">Evne til å koble teori fra studiet mot reelle anlegg og systemer</p></div>
+        <div class="list-box"><p data-no="Verktøy: Python, C, LaTeX og Multisim" data-en="Tools: Python, C, LaTeX and Multisim">Strukturert arbeid med rapporter, beregninger og formidling</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <div class="section-label" data-no="Kontakt" data-en="Contact">Kontakt</div>
+      </div>
+      <div class="contact-box">
+        <p class="section-copy" data-no="Denne siden er en første versjon av min digitale portefølje. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert." data-en="This is the first version of my digital portfolio. The next step is to expand the project section, add a CV and make the content even more concrete and project based.">
+          Dette er første versjon. Neste steg er å legge inn dine ekte lenker, en prosjektoversikt med egne undersider, nedlastbar CV og et tydeligere personlig uttrykk.
+        </p>
+        <div class="contact-links">
+          <a class="chip" href="https://www.linkedin.com/in/henrik-mikal-wilhelmsen-4a953136b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="chip" href="https://github.com/henrikmikal" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="chip" href="mailto:henrikmikal@gmail.com">henrikmikal@gmail.com</a>
+          <a class="chip" href="#" data-no="CV kommer snart" data-en="CV coming soon">CV kommer snart</a>
+        </div>
+      </div>
+    </section>
   </main>
+
+  <footer class="wrap" data-no="Bygget med GitHub Pages og koblet til henrikmikalwilhelmsen.com." data-en="Built with GitHub Pages and connected to henrikmikalwilhelmsen.com.">
+    Bygget for GitHub Pages og koblet til eget domene.
+  </footer>
 
   <script>
     const toggle = document.getElementById('langToggle');
