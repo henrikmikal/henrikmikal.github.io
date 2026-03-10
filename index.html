@@ -39,12 +39,14 @@
     }
 
     .topbar {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      background: rgba(6, 6, 6, 0.72);
-      border-bottom: 1px solid rgba(255,255,255,0.05);
+      left: 0;
+      right: 0;
+      z-index: 30;
+      backdrop-filter: blur(10px);
+      background: rgba(6, 6, 6, 0.22);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .topbar-inner {
@@ -90,11 +92,15 @@
     }
 
     .hero {
-      padding: 80px 0 34px;
+      min-height: 100vh;
+      padding: 0;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 34px;
-      align-items: start;
+      grid-template-columns: 1fr;
+      align-items: end;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0 0 34px 34px;
+      margin-bottom: 44px;
     }
 
     .eyebrow,
@@ -173,6 +179,30 @@
     .hero-card {
       padding: 22px;
       min-height: 100%;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top, rgba(6,6,6,0.88) 8%, rgba(6,6,6,0.46) 42%, rgba(6,6,6,0.18) 70%),
+        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80') center center / cover no-repeat;
+    }
+
+    .hero-overlay {
+      position: relative;
+      z-index: 2;
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 160px 0 72px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 34px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      max-width: 760px;
     }
 
     .hero-visual {
@@ -280,7 +310,7 @@
     .hidden { display: none; }
 
     @media (max-width: 960px) {
-      .hero,
+      .hero-overlay,
       .grid-3,
       .grid-2 {
         grid-template-columns: 1fr;
@@ -291,7 +321,19 @@
       }
 
       .hero {
-        padding-top: 52px;
+        min-height: 88vh;
+      }
+
+      .hero-overlay {
+        padding: 120px 0 44px;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+
+      .hero-card {
+        max-width: 100%;
       }
     }
   </style>
@@ -313,36 +355,38 @@
 
   <main class="wrap" id="top">
     <section class="hero">
-      <div>
-        <div class="eyebrow" data-no="E-portefølje og personlig nettside" data-en="E-portfolio and personal website">E-portefølje og personlig nettside</div>
-        <h1>Henrik Mikal Wilhelmsen</h1>
-        <div class="lead" data-no="Elkraftingeniørstudent med fagbrev som elektriker. Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger." data-en="Electrical power engineering student with a trade certificate as an electrician. I combine practical experience in installation, troubleshooting and commissioning with engineering development in power systems, energy and technical solutions.">
-          Elkraftstudent med fagbrev som elektriker. Jeg bygger bro mellom praktisk erfaring og ingeniørfaglig forståelse.
+      <div class="hero-media"></div>
+      <div class="hero-overlay">
+        <div class="hero-copy">
+          <div class="eyebrow" data-no="E-portefølje og personlig nettside" data-en="E-portfolio and personal website">E-portefølje og personlig nettside</div>
+          <h1>Henrik Mikal Wilhelmsen</h1>
+          <div class="lead" data-no="Elkraftingeniørstudent med fagbrev som elektriker. Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger." data-en="Electrical power engineering student with a trade certificate as an electrician. I combine practical experience in installation, troubleshooting and commissioning with engineering development in power systems, energy and technical solutions.">
+            Elkraftingeniørstudent med fagbrev som elektriker. Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger.
+          </div>
+          <p class="intro" data-no="Denne siden er laget som en kombinasjon av e-portefølje, faglig profil og personlig presentasjon. Målet er å vise både hvem jeg er, hva jeg kan, og hvordan jeg arbeider med tekniske problemer i praksis, med særlig vekt på koblingen mellom håndverksfag og ingeniørutdanning." data-en="This site combines an e-portfolio, a professional profile and a personal presentation. The goal is to show who I am, what I can do, and how I approach technical problems in practice, with particular emphasis on the connection between trade skills and engineering education.">
+            Denne siden er laget som en kombinasjon av e-portefølje, faglig profil og personlig presentasjon. Målet er å vise både hvem jeg er, hva jeg kan, og hvordan jeg arbeider med tekniske problemer i praksis, med særlig vekt på koblingen mellom håndverksfag og ingeniørutdanning.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
+            <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+          </div>
         </div>
-        <p class="intro" data-no="Denne siden er laget som en kombinasjon av e-portefølje, faglig profil og personlig presentasjon. Målet er å vise både hvem jeg er, hva jeg kan, og hvordan jeg arbeider med tekniske problemer i praksis, med særlig vekt på koblingen mellom håndverksfag og ingeniørutdanning." data-en="This site combines an e-portfolio, a professional profile and a personal presentation. The goal is to show who I am, what I can do, and how I approach technical problems in practice, with particular emphasis on the connection between trade skills and engineering education.">
-          Denne siden er laget som en kombinasjon av e-portefølje, faglig profil og personlig presentasjon. Målet er å vise både hvem jeg er, hva jeg kan, og hvordan jeg arbeider med tekniske problemer i praksis.
-        </p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
-          <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
-        </div>
-      </div>
 
-      <aside class="hero-card">
-        <div class="hero-visual"></div>
-        <div class="meta-row">
-          <div class="meta-label" data-no="Studium" data-en="Programme">Studium</div>
-          <div class="meta-value" data-no="Elkraft og bærekraftig energi ved NTNU Gjøvik" data-en="Electrical Power Engineering and Sustainable Energy at NTNU Gjøvik">Elkraft og bærekraftig energi</div>
-        </div>
-        <div class="meta-row">
-          <div class="meta-label" data-no="Bakgrunn" data-en="Background">Bakgrunn</div>
-          <div class="meta-value" data-no="Fagbrev som elektriker, meget godt bestått" data-en="Certified electrician, passed with distinction">Fagbrev som elektriker</div>
-        </div>
-        <div class="meta-row">
-          <div class="meta-label" data-no="Fokus" data-en="Focus">Fokus</div>
-          <div class="meta-value" data-no="Kraftsystemer, energi, feilsøking og tekniske løsninger" data-en="Power systems, energy, troubleshooting and technical solutions">Kraftsystemer, energi og tekniske løsninger</div>
-        </div>
-      </aside>
+        <aside class="hero-card">
+          <div class="meta-row" style="margin-top:0;padding-top:0;border-top:none;">
+            <div class="meta-label" data-no="Studium" data-en="Programme">Studium</div>
+            <div class="meta-value" data-no="Elkraft og bærekraftig energi ved NTNU Gjøvik" data-en="Electrical Power Engineering and Sustainable Energy at NTNU Gjøvik">Elkraft og bærekraftig energi ved NTNU Gjøvik</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label" data-no="Bakgrunn" data-en="Background">Bakgrunn</div>
+            <div class="meta-value" data-no="Fagbrev som elektriker, meget godt bestått" data-en="Certified electrician, passed with distinction">Fagbrev som elektriker, meget godt bestått</div>
+          </div>
+          <div class="meta-row">
+            <div class="meta-label" data-no="Fokus" data-en="Focus">Fokus</div>
+            <div class="meta-value" data-no="Kraftsystemer, energi, feilsøking og tekniske løsninger" data-en="Power systems, energy, troubleshooting and technical solutions">Kraftsystemer, energi, feilsøking og tekniske løsninger</div>
+          </div>
+        </aside>
+      </div>
     </section>
 
     <section id="about">
