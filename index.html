@@ -540,25 +540,37 @@
 
   <script>
     const toggle = document.getElementById('langToggle');
-    let lang = 'no';
 
     function applyLanguage(nextLang) {
       document.documentElement.lang = nextLang === 'no' ? 'no' : 'en';
 
       document.querySelectorAll('[data-no]').forEach((el) => {
-        const newText = nextLang === 'no' ? el.getAttribute('data-no') : el.getAttribute('data-en');
+        const newText = nextLang === 'no'
+          ? el.getAttribute('data-no')
+          : el.getAttribute('data-en');
+
         if (newText !== null) {
           el.textContent = newText;
         }
       });
 
-      toggle.textContent = nextLang === 'no' ? 'NO / EN' : 'EN / NO';
-      lang = nextLang;
+      if (toggle) {
+        toggle.textContent = nextLang === 'no' ? 'NO / EN' : 'EN / NO';
+      }
+
+      localStorage.setItem('siteLang', nextLang);
     }
 
-    toggle.addEventListener('click', () => {
-      applyLanguage(lang === 'no' ? 'en' : 'no');
-    });
+    const savedLang = localStorage.getItem('siteLang') || 'no';
+    applyLanguage(savedLang);
+
+    if (toggle) {
+      toggle.addEventListener('click', () => {
+        const currentLang = localStorage.getItem('siteLang') || 'no';
+        const nextLang = currentLang === 'no' ? 'en' : 'no';
+        applyLanguage(nextLang);
+      });
+    }
   </script>
 </body>
 </html>
