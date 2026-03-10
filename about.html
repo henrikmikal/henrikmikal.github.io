@@ -87,14 +87,52 @@
     }
 
     .lang-toggle {
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.03);
-      color: var(--soft);
+      position: relative;
+      width: 94px;
+      height: 34px;
       border-radius: 999px;
-      padding: 10px 14px;
-      font: inherit;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
       cursor: pointer;
-      transition: 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      font: inherit;
+      color: var(--soft);
+      user-select: none;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .lang-toggle:hover {
+      border-color: rgba(255,255,255,0.2);
+    }
+
+    .lang-toggle:focus-visible {
+      outline: 2px solid rgba(255,255,255,0.3);
+      outline-offset: 3px;
+    }
+
+    .lang-toggle .lang-label {
+      position: relative;
+      z-index: 2;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+    }
+
+    .lang-toggle .lang-knob {
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      width: 38px;
+      height: 26px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.18);
+      transition: transform 0.2s ease;
+    }
+
+    .lang-toggle.lang-en .lang-knob {
+      transform: translateX(42px);
     }
 
     .hero {
@@ -193,7 +231,11 @@
       <a href="utkast7.html" class="brand">HMW</a>
       <div class="topbar-actions">
         <a href="utkast7.html#about" class="back-link" data-no="← Tilbake til forsiden" data-en="← Back to home">← Tilbake til forsiden</a>
-        <button class="lang-toggle" id="langToggle">NO / EN</button>
+        <div class="lang-toggle" id="langToggle" role="switch" aria-checked="false" tabindex="0">
+          <span class="lang-label" aria-hidden="true">NO</span>
+          <span class="lang-label" aria-hidden="true">EN</span>
+          <span class="lang-knob" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </header>
@@ -272,7 +314,8 @@
       });
 
       if (toggle) {
-        toggle.textContent = nextLang === 'no' ? 'NO / EN' : 'EN / NO';
+        toggle.classList.toggle('lang-en', nextLang === 'en');
+        toggle.setAttribute('aria-checked', nextLang === 'en' ? 'true' : 'false');
       }
 
       localStorage.setItem('siteLang', nextLang);
@@ -282,10 +325,18 @@
     applyLanguage(savedLang);
 
     if (toggle) {
-      toggle.addEventListener('click', () => {
+      const changeLang = () => {
         const currentLang = localStorage.getItem('siteLang') || 'no';
         const nextLang = currentLang === 'no' ? 'en' : 'no';
         applyLanguage(nextLang);
+      };
+
+      toggle.addEventListener('click', changeLang);
+      toggle.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          changeLang();
+        }
       });
     }
   </script>
