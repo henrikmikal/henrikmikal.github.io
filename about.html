@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om meg | Henrik Mikal Wilhelmsen</title>
+  <meta name="description" content="Mer om Henrik Mikal Wilhelmsen, reisen fra elektriker til elkraftingeniørstudent, og personen bak porteføljen." />
+  <style>
+    :root {
+      --bg: #060606;
+      --panel: #111113;
+      --text: #f4f4f2;
+      --muted: #aaaaaf;
+      --line: #232327;
+      --soft: #d4d4d8;
+      --max: 980px;
+      --radius: 24px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      line-height: 1.75;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      backdrop-filter: blur(14px);
+      background: rgba(6, 6, 6, 0.6);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .topbar-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-size: 0.84rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--soft);
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .back-link:hover {
+      color: var(--text);
+    }
+
+    .hero {
+      padding: 90px 0 38px;
+    }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.24em;
+      font-size: 0.76rem;
+    }
+
+    h1 {
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      line-height: 0.96;
+      letter-spacing: -0.04em;
+      margin: 18px 0 0;
+      max-width: 760px;
+    }
+
+    .lead {
+      margin-top: 24px;
+      max-width: 760px;
+      color: var(--soft);
+      font-size: 1.12rem;
+    }
+
+    .section {
+      padding: 18px 0 10px;
+    }
+
+    .card {
+      margin-top: 18px;
+      padding: 26px;
+      border-radius: var(--radius);
+      border: 1px solid rgba(255,255,255,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    }
+
+    .card h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+      line-height: 1.2;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--soft);
+    }
+
+    .card p + p {
+      margin-top: 16px;
+    }
+
+    .quote {
+      margin-top: 18px;
+      padding-left: 18px;
+      border-left: 2px solid rgba(255,255,255,0.14);
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      padding: 42px 0 60px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        padding-top: 56px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a href="index.html" class="brand">HMW</a>
+      <a href="index.html#about" class="back-link">← Tilbake til forsiden</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="eyebrow">Mer om meg</div>
+      <h1>Hvem jeg er, og hvordan reisen min har formet meg</h1>
+      <p class="lead">
+        Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på.
+      </p>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Min bakgrunn</h2>
+        <p>
+          Jeg har bakgrunn fra elektrikerfaget og flere års erfaring med installasjon, feilsøking, idriftsettelse og teknisk dokumentasjon. Den praktiske erfaringen har gitt meg en arbeidsform der jeg er opptatt av kvalitet, struktur og løsninger som faktisk fungerer i praksis.
+        </p>
+        <p>
+          Overgangen til elkraftstudiet ved NTNU Gjøvik handler for meg ikke om å forlate det praktiske, men om å bygge videre på det. Jeg ønsker å kombinere håndverksforståelse med ingeniørfaglig analyse for å bli bedre rustet til å arbeide med kraftsystemer, energi og tekniske utfordringer på et høyere nivå.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Hvordan jeg er som person</h2>
+        <p>
+          Jeg vil beskrive meg selv som nysgjerrig, sosial og målrettet. Jeg liker å forstå hvordan ting fungerer, enten det handler om tekniske systemer, nye fagområder eller praktiske løsninger. Den nysgjerrigheten gjør også at jeg sjelden er fornøyd med bare å vite hva som virker, jeg vil helst forstå hvorfor det virker.
+        </p>
+        <p>
+          Samtidig trives jeg godt sammen med andre. Jeg liker samarbeid, gode samtaler og å kunne diskutere ideer, løsninger og utfordringer med folk rundt meg. For meg handler det ikke bare om å komme fram til et svar, men også om å lære gjennom prosessen.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="card">
+        <h2>Studiet og reisen videre</h2>
+        <p>
+          Studiet er en viktig del av reisen min, og jeg ønsker at denne nettsiden også skal få vise utviklingen underveis. Derfor vil jeg bruke den til å samle prosjekter, refleksjoner og erfaringer fra tiden som student, ikke bare som en portefølje, men også som et bilde av hvordan jeg utvikler meg faglig og personlig.
+        </p>
+        <p>
+          Målet mitt er å bygge en profil som viser både hvor jeg kommer fra, hva jeg arbeider med nå, og hvor jeg vil videre. Jeg tror de beste løsningene ofte kommer når praktisk erfaring og teoretisk forståelse får spille sammen.
+        </p>
+        <p class="quote">
+          Jeg prøver å bygge videre på det jeg allerede kan, samtidig som jeg utfordrer meg selv til å forstå mer, lære mer og skape bedre løsninger.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      Henrik Mikal Wilhelmsen · Mer om meg
+    </footer>
+  </main>
+</body>
+</html>
