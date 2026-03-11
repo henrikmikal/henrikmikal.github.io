@@ -377,66 +377,92 @@
     }
 
     @media (max-width: 960px) {
-      .grid-3,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
+        .grid-3,
+        .grid-2 {
+            grid-template-columns: 1fr;
+        }
 
-      .nav {
-        display: none;
-      }
+        .nav {
+            display: none;
+        }
 
-      .hero,
-      .hero-overlay {
-        min-height: auto;
-      }
+        .hero,
+        .hero-overlay {
+            min-height: auto;
+        }
 
-      .hero-copy {
-        width: calc(100% - 40px);
-        margin-left: 20px;
-        padding-top: 100px;
-        padding-bottom: 28px;
-        padding-right: 0;
-      }
+        .hero-copy {
+            width: calc(100% - 40px);
+            margin-left: 20px;
+            padding-top: 128px;
+            padding-bottom: 22px;
+            padding-right: 0;
+        }
 
-      .hero-visual {
-        position: relative;
-        top: auto;
-        right: auto;
-        width: calc(100% - 40px);
-        height: 56vh;
-        min-height: 380px;
-        margin: 0 auto 0;
-      }
+        .hero-visual {
+            position: relative;
+            top: auto;
+            right: auto;
+            width: calc(100% - 40px);
+            height: 60vh;
+            min-height: 420px;
+            margin: 0 auto 0;
+        }
 
-      .hero-visual::before {
-        background:
-          linear-gradient(
-            to top,
-            rgba(6, 6, 6, 0.78) 0%,
-            rgba(6, 6, 6, 0.34) 34%,
-            rgba(6, 6, 6, 0.00) 68%
-          );
-      }
+        .hero-visual::before {
+            background:
+            linear-gradient(
+                to top,
+                rgba(6, 6, 6, 0.68) 0%,
+                rgba(6, 6, 6, 0.26) 34%,
+                rgba(6, 6, 6, 0.00) 68%
+            );
+        }
 
-      .hero-visual::after {
-        background: none;
-      }
+        .hero-visual::after {
+            background: none;
+        }
 
-      .hero-photo {
-        object-position: center 18%;
-      }
+        .hero-photo {
+            object-position: center 14%;
+        }
 
-      h1 {
-        max-width: 100%;
-        font-size: clamp(2.8rem, 11vw, 4.4rem);
-      }
+        .eyebrow {
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+        }
 
-      .lead,
-      .intro {
-        max-width: 100%;
-      }
-    }
+        h1 {
+            max-width: 100%;
+            font-size: clamp(2.2rem, 8.4vw, 3.3rem);
+            line-height: 0.98;
+            letter-spacing: -0.03em;
+            margin-top: 14px;
+        }
+
+        .lead {
+            max-width: 100%;
+            margin-top: 18px;
+            font-size: 1rem;
+        }
+
+        .intro {
+            max-width: 100%;
+            margin-top: 12px;
+            font-size: 0.94rem;
+        }
+
+        .hero-actions {
+            margin-top: 22px;
+            gap: 10px;
+        }
+
+        .button,
+        .chip {
+            padding: 11px 15px;
+            font-size: 0.92rem;
+        }
+        }
   </style>
 </head>
 <body>
