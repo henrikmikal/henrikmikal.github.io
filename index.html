@@ -377,29 +377,29 @@
     }
 
     @media (max-width: 960px) {
-    .grid-3,
-    .grid-2 {
+      .grid-3,
+      .grid-2 {
         grid-template-columns: 1fr;
-    }
+      }
 
-    .nav {
+      .nav {
         display: none;
-    }
+      }
 
-    .hero,
-    .hero-overlay {
+      .hero,
+      .hero-overlay {
         min-height: auto;
-    }
+      }
 
-    .hero-copy {
+      .hero-copy {
         width: calc(100% - 40px);
         margin-left: 20px;
         padding-top: 128px;
-        padding-bottom: 28px;
+        padding-bottom: 20px;
         padding-right: 0;
-    }
+      }
 
-    .hero-visual {
+      .hero-visual {
         position: relative;
         top: auto;
         right: auto;
@@ -407,52 +407,36 @@
         height: 56vh;
         min-height: 380px;
         margin: 0 auto 0;
-    }
+      }
 
-    .hero-visual::before {
+      .hero-visual::before {
         background:
-        linear-gradient(
+          linear-gradient(
             to top,
             rgba(6, 6, 6, 0.78) 0%,
             rgba(6, 6, 6, 0.34) 34%,
             rgba(6, 6, 6, 0.00) 68%
-        );
-    }
+          );
+      }
 
-    .hero-visual::after {
+      .hero-visual::after {
         background: none;
-    }
+      }
 
-    .hero-photo {
+      .hero-photo {
         object-position: center 18%;
-    }
+      }
 
-    h1 {
+      h1 {
         max-width: 100%;
         font-size: clamp(2.35rem, 9vw, 3.5rem);
-    }
+      }
 
-    .lead,
-    .intro {
+      .lead,
+      .intro {
         max-width: 100%;
+      }
     }
-
-    .lead {
-        font-size: 0.98rem;
-        margin-top: 18px;
-    }
-
-    .intro {
-        font-size: 0.93rem;
-        margin-top: 12px;
-    }
-
-    .button,
-    .chip {
-        padding: 11px 15px;
-        font-size: 0.92rem;
-    }
-}
   </style>
 </head>
 <body>
