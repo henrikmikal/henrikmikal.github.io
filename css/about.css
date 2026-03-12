@@ -1,0 +1,74 @@
+body {
+  line-height: 1.75;
+}
+
+.wrap {
+  width: min(var(--about-max), calc(100% - 40px));
+}
+
+.about-hero {
+  padding: 90px 0 38px;
+}
+
+.about-hero .eyebrow {
+  color: var(--about-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 0.76rem;
+}
+
+.about-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin: 18px 0 0;
+  max-width: 760px;
+}
+
+.about-hero .lead {
+  margin-top: 24px;
+  max-width: 760px;
+  color: var(--about-soft);
+  font-size: 1.12rem;
+}
+
+.section {
+  padding: 18px 0 10px;
+}
+
+.section .card {
+  margin-top: 18px;
+  padding: 26px;
+  border-radius: var(--about-radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+}
+
+.section .card h2 {
+  margin: 0 0 14px;
+  font-size: 1.25rem;
+  line-height: 1.2;
+}
+
+.section .card p {
+  margin: 0;
+  color: var(--about-soft);
+}
+
+.section .card p + p {
+  margin-top: 16px;
+}
+
+.quote {
+  margin-top: 18px;
+  padding-left: 18px;
+  border-left: 2px solid rgba(255, 255, 255, 0.14);
+  color: var(--about-muted);
+  font-style: italic;
+}
+
+main footer {
+  padding: 42px 0 60px;
+  color: var(--about-muted);
+  font-size: 0.92rem;
+}
