@@ -138,48 +138,6 @@
       transform: translateX(48px);
     }
 
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      width: 100%;
-      overflow: hidden;
-    }
-
-    .hero-media {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(
-          90deg,
-          rgba(6, 6, 6, 0.96) 0%,
-          rgba(6, 6, 6, 0.90) 18%,
-          rgba(6, 6, 6, 0.76) 32%,
-          rgba(6, 6, 6, 0.46) 46%,
-          rgba(6, 6, 6, 0.16) 60%,
-          rgba(6, 6, 6, 0.02) 76%,
-          rgba(6, 6, 6, 0.00) 100%
-        ),
-        url('images/Profilbilde 2.jpg');
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 90% 100%;
-    }
-
-    .hero-overlay {
-      position: relative;
-      z-index: 2;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-copy {
-      width: min(620px, calc(100% - 40px));
-      margin-left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
-      padding-top: 110px;
-      padding-bottom: 70px;
-    }
-
     .eyebrow,
     .section-label {
       color: var(--muted);
@@ -243,6 +201,133 @@
     .chip {
       color: var(--soft);
       background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* DESKTOP HERO */
+    .hero-desktop {
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      background: var(--bg);
+    }
+
+    .hero-desktop .hero-overlay {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-desktop .hero-copy {
+      position: relative;
+      z-index: 4;
+      width: min(620px, calc(100% - 40px));
+      margin-left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
+      padding-top: 110px;
+      padding-bottom: 70px;
+      padding-right: 42px;
+    }
+
+    .hero-visual {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: min(50vw, 760px);
+      height: 100%;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(6, 6, 6, 1) 0%,
+          rgba(6, 6, 6, 0.98) 10%,
+          rgba(6, 6, 6, 0.92) 20%,
+          rgba(6, 6, 6, 0.76) 30%,
+          rgba(6, 6, 6, 0.50) 42%,
+          rgba(6, 6, 6, 0.22) 56%,
+          rgba(6, 6, 6, 0.06) 72%,
+          rgba(6, 6, 6, 0.00) 100%
+        );
+      pointer-events: none;
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background:
+        linear-gradient(
+          to top,
+          rgba(6, 6, 6, 0.28) 0%,
+          rgba(6, 6, 6, 0.10) 24%,
+          rgba(6, 6, 6, 0.00) 48%
+        );
+      pointer-events: none;
+    }
+
+    .hero-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 56% center;
+      display: block;
+      filter: saturate(0.98) contrast(1.02);
+    }
+
+    /* MOBILE HERO */
+    .hero-mobile {
+      display: none;
+      position: relative;
+      min-height: 100vh;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(6, 6, 6, 0.96) 0%,
+          rgba(6, 6, 6, 0.90) 18%,
+          rgba(6, 6, 6, 0.76) 32%,
+          rgba(6, 6, 6, 0.46) 46%,
+          rgba(6, 6, 6, 0.16) 60%,
+          rgba(6, 6, 6, 0.02) 76%,
+          rgba(6, 6, 6, 0.00) 100%
+        ),
+        url('images/Profilbilde 2.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: 90% 100%;
+    }
+
+    .hero-mobile .hero-overlay {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-mobile .hero-copy {
+      width: min(620px, calc(100% - 40px));
+      margin-left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
+      padding-top: 110px;
+      padding-bottom: 70px;
     }
 
     main {
@@ -346,16 +431,21 @@
         display: none;
       }
 
-      .hero {
+      .hero-desktop {
+        display: none;
+      }
+
+      .hero-mobile {
+        display: block;
         min-height: 88vh;
       }
 
-      .hero-overlay {
+      .hero-mobile .hero-overlay {
         min-height: 88vh;
         align-items: end;
       }
 
-      .hero-copy {
+      .hero-mobile .hero-copy {
         width: calc(100% - 40px);
         margin-left: 20px;
         padding-top: 100px;
@@ -385,6 +475,16 @@
         max-width: 100%;
       }
     }
+
+    @media (min-width: 961px) {
+      .hero-desktop {
+        display: block;
+      }
+
+      .hero-mobile {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
@@ -408,7 +508,48 @@
     </div>
   </header>
 
-  <section class="hero" id="top">
+  <section class="hero-desktop" id="top">
+    <div class="hero-visual">
+      <img
+        class="hero-photo"
+        src="images/Profilbilde 2.jpg"
+        alt="Profilbilde av Henrik Mikal Wilhelmsen"
+      />
+    </div>
+
+    <div class="hero-overlay">
+      <div class="hero-copy">
+        <div class="eyebrow" data-no="E-portefølje og personlig nettside" data-en="E-portfolio and personal website">
+          E-portefølje og personlig nettside
+        </div>
+
+        <h1>Henrik Mikal Wilhelmsen</h1>
+
+        <div
+          class="lead"
+          data-no="Elkraftingeniørstudent med fagbrev som elektriker."
+          data-en="Electrical power engineering student with a trade certificate as an electrician."
+        >
+          Elkraftingeniørstudent med fagbrev som elektriker.
+        </div>
+
+        <p
+          class="intro"
+          data-no="Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger."
+          data-en="I combine practical experience in installation, troubleshooting and commissioning with engineering development in power systems, energy and technical solutions."
+        >
+          Jeg kombinerer praktisk erfaring fra installasjon, feilsøking og idriftsettelse med ingeniørfaglig utvikling innen elkraft, energi og tekniske løsninger.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
+          <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-mobile" id="top-mobile">
     <div class="hero-media"></div>
     <div class="hero-overlay">
       <div class="hero-copy">
