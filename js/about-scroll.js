@@ -9,6 +9,7 @@
   const mobileQuery = window.matchMedia('(max-width: 900px)');
   const shots = stage.querySelectorAll('.about-wall-shot');
   const dots = stage.querySelectorAll('.about-mobile-dot');
+  const SWIPE_UNLOCK_PROGRESS = 0.9;
   let rafId = 0;
   let currentProgress = 0;
   let currentIndex = 0;
@@ -67,7 +68,7 @@
   window.addEventListener('resize', requestUpdate);
 
   stage.addEventListener('touchstart', (event) => {
-    if (!mobileQuery.matches || currentProgress < 0.96) {
+    if (!mobileQuery.matches || currentProgress < SWIPE_UNLOCK_PROGRESS) {
       touchActive = false;
       return;
     }
@@ -79,7 +80,7 @@
   }, { passive: true });
 
   stage.addEventListener('touchend', (event) => {
-    if (!touchActive || !mobileQuery.matches || currentProgress < 0.96) {
+    if (!touchActive || !mobileQuery.matches || currentProgress < SWIPE_UNLOCK_PROGRESS) {
       touchActive = false;
       return;
     }
