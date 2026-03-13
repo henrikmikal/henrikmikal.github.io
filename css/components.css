@@ -406,6 +406,25 @@
   margin-top: 8px;
 }
 
+.experience-more {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  padding: 6px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--soft);
+  font-size: 0.82rem;
+  text-decoration: none;
+}
+
+.experience-more:hover {
+  color: var(--text);
+  border-color: #4b4b52;
+}
+
 .contact-box {
   padding: 28px;
   margin-top: 18px;
