@@ -16,20 +16,61 @@
 <body>
   <header class="topbar">
     <div class="wrap topbar-inner">
-      <a href="#top" class="brand">HMW</a>
+      <div class="brand-controls">
+        <a href="#top" class="brand">HMW</a>
+
+        <details class="mobile-menu mobile-menu-inline mobile-menu-brand">
+          <summary aria-label="Open menu">
+            <span aria-hidden="true">▾</span>
+          </summary>
+          <div class="mobile-menu-panel">
+            <a href="#about" data-no="Om meg" data-en="About">Om meg</a>
+            <a href="about/" data-no="Mer om meg" data-en="More about me">Mer om meg</a>
+            <a href="#portfolio" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</a>
+            <a href="#projects" data-no="Prosjekter" data-en="Projects">Prosjekter</a>
+            <a href="#project-energy" data-no="Energi og styring" data-en="Energy and control">Energi og styring</a>
+            <a href="#project-power" data-no="Kraftsystemanalyse" data-en="Power system analysis">Kraftsystemanalyse</a>
+            <a href="#project-docs" data-no="Dokumentasjon og LaTeX" data-en="Documentation and LaTeX">Dokumentasjon og LaTeX</a>
+            <a href="#experience" data-no="Erfaring" data-en="Experience">Erfaring</a>
+            <a href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+            <a href="https://www.linkedin.com/in/henrik-mikal-wilhelmsen-4a953136b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://github.com/henrikmikal" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="mailto:henrikmikal@gmail.com">henrikmikal@gmail.com</a>
+            <a href="#" data-no="CV kommer snart" data-en="CV coming soon">CV kommer snart</a>
+          </div>
+        </details>
+      </div>
 
       <nav class="nav">
-        <a href="#about" data-no="Om meg" data-en="About">Om meg</a>
+        <div class="nav-item nav-item-dropdown">
+          <a href="#about" class="nav-link-main" aria-haspopup="true">
+            <span data-no="Om meg" data-en="About">Om meg</span>
+          </a>
+          <div class="nav-dropdown" role="menu" aria-label="About links">
+            <a href="about/" role="menuitem" data-no="Mer om meg" data-en="More about me">Mer om meg</a>
+          </div>
+        </div>
         <a href="#portfolio" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</a>
-        <a href="#projects" data-no="Prosjekter" data-en="Projects">Prosjekter</a>
+        <div class="nav-item nav-item-dropdown">
+          <a href="#projects" class="nav-link-main" aria-haspopup="true">
+            <span data-no="Prosjekter" data-en="Projects">Prosjekter</span>
+          </a>
+          <div class="nav-dropdown" role="menu" aria-label="Project links">
+            <a href="#project-energy" role="menuitem" data-no="Energi og styring" data-en="Energy and control">Energi og styring</a>
+            <a href="#project-power" role="menuitem" data-no="Kraftsystemanalyse" data-en="Power system analysis">Kraftsystemanalyse</a>
+            <a href="#project-docs" role="menuitem" data-no="Dokumentasjon og LaTeX" data-en="Documentation and LaTeX">Dokumentasjon og LaTeX</a>
+          </div>
+        </div>
         <a href="#experience" data-no="Erfaring" data-en="Experience">Erfaring</a>
         <a href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
       </nav>
 
-      <div class="lang-toggle" id="langToggle" role="switch" aria-checked="false" tabindex="0">
-        <span class="lang-label" aria-hidden="true">NO</span>
-        <span class="lang-label" aria-hidden="true">EN</span>
-        <span class="lang-knob" aria-hidden="true"></span>
+      <div class="topbar-actions">
+        <div class="lang-toggle" id="langToggle" role="switch" aria-checked="false" tabindex="0">
+          <span class="lang-label" aria-hidden="true">NO</span>
+          <span class="lang-label" aria-hidden="true">EN</span>
+          <span class="lang-knob" aria-hidden="true"></span>
+        </div>
       </div>
     </div>
   </header>
@@ -196,7 +237,7 @@
         </div>
 
         <div class="grid-3">
-          <article class="card">
+          <article class="card" id="project-energy">
             <div class="card-tag">Arduino / Energi</div>
             <h3 data-no="Tekniske energiprosjekter og styring" data-en="Technical energy projects and control systems">
               Tekniske energiprosjekter og styring
@@ -209,7 +250,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" id="project-power">
             <div class="card-tag" data-no="Kraftsystemer" data-en="Power systems">Kraftsystemer</div>
             <h3 data-no="Analyse av kraftsystemer og nettløsninger" data-en="Power system and network analysis">
               Analyse av kraftsystemer og nettløsninger
@@ -222,7 +263,7 @@
             </p>
           </article>
 
-          <article class="card">
+          <article class="card" id="project-docs">
             <div class="card-tag" data-no="Dokumentasjon" data-en="Documentation">Dokumentasjon</div>
             <h3 data-no="Teknisk dokumentasjon, rapporter og LaTeX" data-en="Technical documentation, reports and LaTeX">
               Teknisk dokumentasjon, rapporter og LaTeX

@@ -8,6 +8,10 @@
     display: none;
   }
 
+  .mobile-menu-inline {
+    display: block;
+  }
+
   .hero-desktop {
     display: none;
   }
@@ -61,6 +65,10 @@
   .hero-mobile {
     display: none;
   }
+
+  .mobile-menu-inline {
+    display: none;
+  }
 }
 
 @media (max-width: 720px) {
@@ -73,14 +81,15 @@
   }
 
   .topbar-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
     padding: 10px 0;
+    min-height: 68px;
   }
 
   .topbar-actions {
-    width: 100%;
-    justify-content: space-between;
+    width: auto;
+    justify-content: flex-end;
   }
 }
