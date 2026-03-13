@@ -9,7 +9,7 @@
   const mobileQuery = window.matchMedia('(max-width: 900px)');
   const shots = stage.querySelectorAll('.about-wall-shot');
   const dots = stage.querySelectorAll('.about-mobile-dot');
-  const SWIPE_UNLOCK_PROGRESS = 0.9;
+  const SWIPE_UNLOCK_PROGRESS = 0.65;
   let rafId = 0;
   let currentProgress = 0;
   let currentIndex = 0;
