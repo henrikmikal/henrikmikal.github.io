@@ -38,23 +38,39 @@
   </header>
 
   <main class="wrap">
-    <section class="hero about-hero">
-      <div class="eyebrow" data-no="Mer om meg" data-en="More about me">Mer om meg</div>
+    <section class="about-scroll-hero" aria-label="Bildegalleri">
+      <div class="about-scroll-stage">
+        <div class="about-image-wall">
+          <figure class="about-wall-shot">
+            <img src="../assets/images/Profilbilde 3.jpg" alt="Portrett av Henrik" />
+          </figure>
+          <figure class="about-wall-shot">
+            <img src="../assets/images/Fjelltopp 2.jpg" alt="Henrik på fjelltopp" />
+          </figure>
+          <figure class="about-wall-shot">
+            <img src="../assets/images/Snoscooter 2.jpg" alt="Henrik med snoscooter" />
+          </figure>
+        </div>
 
-      <h1
-        data-no="Hvem jeg er, og hvordan reisen min har formet meg"
-        data-en="Who I am, and how my journey has shaped me"
-      >
-        Hvem jeg er, og hvordan reisen min har formet meg
-      </h1>
+        <div class="about-hero-overlay">
+          <div class="eyebrow" data-no="Mer om meg" data-en="More about me">Mer om meg</div>
 
-      <p
-        class="lead"
-        data-no="Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på."
-        data-en="This page is less about bullet points and more about the person behind the portfolio. Here I want to show more about who I am, what motivates me, and how the journey from electrician to power engineering student has shaped the way I think."
-      >
-        Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på.
-      </p>
+          <h1
+            data-no="Hvem jeg er, og hvordan reisen min har formet meg"
+            data-en="Who I am, and how my journey has shaped me"
+          >
+            Hvem jeg er, og hvordan reisen min har formet meg
+          </h1>
+
+          <p
+            class="lead"
+            data-no="Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på."
+            data-en="This page is less about bullet points and more about the person behind the portfolio. Here I want to show more about who I am, what motivates me, and how the journey from electrician to power engineering student has shaped the way I think."
+          >
+            Denne siden handler mindre om punktlister og mer om personen bak porteføljen. Her ønsker jeg å vise litt mer av hvem jeg er, hva som driver meg, og hvordan veien fra elektrikerfaget til elkraftstudiet har formet måten jeg tenker på.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section class="section">
@@ -130,6 +146,7 @@
     </footer>
   </main>
 
+  <script src="../js/about-scroll.js"></script>
   <script src="../js/language.js"></script>
 </body>
 </html>

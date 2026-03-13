@@ -6,28 +6,105 @@ body {
   width: min(var(--about-max), calc(100% - 40px));
 }
 
-.about-hero {
-  padding: 90px 0 38px;
+.about-scroll-hero {
+  width: 100vw;
+  margin-left: calc((100vw - 100%) / -2);
+  margin-right: calc((100vw - 100%) / -2);
+  height: 185vh;
 }
 
-.about-hero .eyebrow {
+.about-scroll-stage {
+  --scene-progress: 0;
+  --topbar-offset: 76px;
+  position: sticky;
+  top: var(--topbar-offset);
+  height: calc(100vh - var(--topbar-offset));
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-scroll-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: rgba(6, 6, 8, calc(0.44 * (1 - min(1, calc(var(--scene-progress) * 1.18)))));
+  backdrop-filter: blur(calc(14px * (1 - min(1, calc(var(--scene-progress) * 1.18)))));
+  pointer-events: none;
+}
+
+.about-image-wall {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  width: 100%;
+  height: 100%;
+}
+
+.about-wall-shot {
+  margin: 0;
+  min-width: 0;
+}
+
+.about-wall-shot img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.about-wall-shot:nth-child(1) img {
+  object-position: center 20%;
+}
+
+.about-wall-shot:nth-child(2) img {
+  object-position: center 40%;
+}
+
+.about-wall-shot:nth-child(3) img {
+  object-position: center 48%;
+}
+
+.about-hero-overlay {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 50%;
+  bottom: auto;
+  width: min(900px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 22px 24px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(8, 8, 10, 0.44);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.32);
+  opacity: max(0, calc(1 - (var(--scene-progress) * 1.25)));
+  transform: translateY(-50%);
+}
+
+.about-hero-overlay .eyebrow {
   color: var(--about-muted);
   text-transform: uppercase;
   letter-spacing: 0.24em;
   font-size: 0.76rem;
 }
 
-.about-hero h1 {
+.about-hero-overlay h1 {
   font-size: clamp(2.6rem, 6vw, 5rem);
   line-height: 0.96;
   letter-spacing: -0.04em;
   margin: 18px 0 0;
-  max-width: 760px;
+  max-width: 640px;
 }
 
-.about-hero .lead {
+.about-hero-overlay .lead {
   margin-top: 24px;
-  max-width: 760px;
+  max-width: 620px;
   color: var(--about-soft);
   font-size: 1.12rem;
 }
@@ -71,4 +148,129 @@ main footer {
   padding: 42px 0 60px;
   color: var(--about-muted);
   font-size: 0.92rem;
+}
+
+.job-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 480px) minmax(320px, 1fr);
+  align-items: start;
+  gap: 40px;
+  padding-top: 0;
+  padding-bottom: 48px;
+  margin-right: calc((100vw - 100%) / -2);
+}
+
+.job-hero-text {
+  min-width: 0;
+  max-width: 480px;
+  padding-top: 90px;
+}
+
+.job-hero-photo {
+  position: relative;
+  flex-shrink: 0;
+  min-height: 100vh;
+  overflow: hidden;
+  justify-self: stretch;
+  border-radius: 16px 0 0 16px;
+}
+
+.job-hero-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(6, 6, 6, 1) 0%,
+      rgba(6, 6, 6, 0.95) 2%,
+      rgba(6, 6, 6, 0.82) 6%,
+      rgba(6, 6, 6, 0.60) 10%,
+      rgba(6, 6, 6, 0.36) 16%,
+      rgba(6, 6, 6, 0.14) 23%,
+      rgba(6, 6, 6, 0.04) 34%,
+      rgba(6, 6, 6, 0.00) 100%
+    );
+  pointer-events: none;
+}
+
+.job-hero-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background:
+    linear-gradient(
+      to top,
+      rgba(6, 6, 6, 0.28) 0%,
+      rgba(6, 6, 6, 0.10) 24%,
+      rgba(6, 6, 6, 0.00) 48%
+    );
+  pointer-events: none;
+}
+
+.job-photo {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  object-position: 56% center;
+  filter: saturate(0.98) contrast(1.02);
+}
+
+@media (max-width: 680px) {
+  .job-hero {
+    grid-template-columns: 1fr;
+    margin-right: 0;
+  }
+
+  .job-hero-text {
+    padding-top: 0;
+  }
+
+  .job-photo {
+    width: 100%;
+    height: 260px;
+  }
+}
+
+@media (max-width: 720px) {
+  .about-scroll-stage {
+    --topbar-offset: 68px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-scroll-hero {
+    height: auto;
+  }
+
+  .about-scroll-stage {
+    position: relative;
+    top: 0;
+    height: auto;
+  }
+
+  .about-scroll-stage::before {
+    display: none;
+  }
+
+  .about-image-wall {
+    grid-template-columns: 1fr;
+  }
+
+  .about-wall-shot img {
+    min-height: 42vh;
+  }
+
+  .about-hero-overlay {
+    position: relative;
+    left: 0;
+    top: auto;
+    bottom: 0;
+    width: calc(100% - 30px);
+    margin: 14px 15px 18px;
+    transform: none;
+  }
 }
