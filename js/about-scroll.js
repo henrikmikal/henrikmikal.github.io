@@ -9,7 +9,8 @@
   const mobileQuery = window.matchMedia('(max-width: 900px)');
   const shots = stage.querySelectorAll('.about-wall-shot');
   const dots = stage.querySelectorAll('.about-mobile-dot');
-  const SWIPE_UNLOCK_PROGRESS = 0.65;
+  const SWIPE_UNLOCK_PROGRESS = 0.18;
+  const SWIPE_TRIGGER_PX = 24;
   let rafId = 0;
   let currentProgress = 0;
   let currentIndex = 0;
@@ -89,7 +90,7 @@
     const deltaX = touch.clientX - touchStartX;
     const deltaY = touch.clientY - touchStartY;
 
-    if (Math.abs(deltaX) > 42 && Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (Math.abs(deltaX) > SWIPE_TRIGGER_PX && Math.abs(deltaX) > Math.abs(deltaY)) {
       setMobileIndex(deltaX < 0 ? currentIndex + 1 : currentIndex - 1);
     }
 
