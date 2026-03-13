@@ -15,11 +15,13 @@ body {
 
 .about-scroll-stage {
   --scene-progress: 0;
+  --mobile-index: 0;
   --topbar-offset: 76px;
   position: sticky;
   top: var(--topbar-offset);
   height: calc(100vh - var(--topbar-offset));
   overflow: hidden;
+  touch-action: pan-y;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
@@ -107,6 +109,33 @@ body {
   max-width: 620px;
   color: var(--about-soft);
   font-size: 1.12rem;
+}
+
+.about-mobile-dots {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 18px;
+  justify-content: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.about-mobile-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.about-mobile-dot.is-active {
+  transform: scale(1.25);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(255, 255, 255, 0.92);
 }
 
 .section {
@@ -242,35 +271,28 @@ main footer {
 }
 
 @media (max-width: 900px) {
-  .about-scroll-hero {
-    height: auto;
-  }
-
-  .about-scroll-stage {
-    position: relative;
-    top: 0;
-    height: auto;
-  }
-
-  .about-scroll-stage::before {
-    display: none;
-  }
-
   .about-image-wall {
-    grid-template-columns: 1fr;
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transform: translateX(calc(var(--mobile-index) * -33.333333%));
+    transition: transform 0.42s ease;
+  }
+
+  .about-wall-shot {
+    flex: 0 0 33.333333%;
   }
 
   .about-wall-shot img {
-    min-height: 42vh;
+    min-height: 100%;
+  }
+
+  .about-mobile-dots {
+    display: flex;
   }
 
   .about-hero-overlay {
-    position: relative;
-    left: 0;
-    top: auto;
-    bottom: 0;
-    width: calc(100% - 30px);
-    margin: 14px 15px 18px;
-    transform: none;
+    width: calc(100% - 24px);
+    padding: 18px 18px;
   }
 }
