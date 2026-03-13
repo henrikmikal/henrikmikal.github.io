@@ -360,6 +360,52 @@
   background: rgba(255, 255, 255, 0.02);
 }
 
+.experience-list {
+  display: grid;
+  gap: 14px;
+}
+
+.experience-item {
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.experience-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.experience-top h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  line-height: 1.25;
+}
+
+.experience-top span {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.experience-item p {
+  margin: 12px 0 0;
+  color: var(--soft);
+}
+
+.experience-points {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: var(--soft);
+}
+
+.experience-points li + li {
+  margin-top: 8px;
+}
+
 .contact-box {
   padding: 28px;
   margin-top: 18px;

@@ -39,3 +39,13 @@ if (toggle) {
     }
   });
 }
+
+const mobileMenus = document.querySelectorAll(".mobile-menu");
+
+mobileMenus.forEach((menu) => {
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.removeAttribute("open");
+    });
+  });
+});
