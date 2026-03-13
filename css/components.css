@@ -146,6 +146,12 @@
   background: rgba(255, 255, 255, 0.03);
 }
 
+#about .button.secondary {
+  border-color: rgba(255, 255, 255, 0.14);
+  color: var(--soft);
+  background: rgba(255, 255, 255, 0.03);
+}
+
 .grid-3,
 .grid-2 {
   display: grid;

@@ -137,3 +137,7 @@
   max-width: 800px;
   color: var(--soft);
 }
+
+.about-actions {
+  margin-top: 22px;
+}
