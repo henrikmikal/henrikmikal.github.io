@@ -3,6 +3,11 @@ const toggle = document.getElementById("langToggle");
 function applyLanguage(nextLang) {
   document.documentElement.lang = nextLang === "no" ? "no" : "en";
 
+  document.querySelectorAll("[data-lang-only]").forEach((el) => {
+    const onlyLang = el.getAttribute("data-lang-only");
+    el.hidden = onlyLang !== nextLang;
+  });
+
   document.querySelectorAll("[data-no]").forEach((el) => {
     const newText = nextLang === "no"
       ? el.getAttribute("data-no")

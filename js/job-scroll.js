@@ -13,10 +13,10 @@
   const updateSceneProgress = () => {
     rafId = 0;
 
-    const rect = scene.getBoundingClientRect();
+    const sceneTop = scene.getBoundingClientRect().top + window.scrollY;
     const stageHeight = stage.clientHeight || window.innerHeight;
     const scrollSpan = Math.max(1, scene.offsetHeight - stageHeight);
-    const raw = -rect.top / scrollSpan;
+    const raw = (window.scrollY - sceneTop) / scrollSpan;
     const progress = clamp(raw, 0, 1);
 
     stage.style.setProperty('--scene-progress', progress.toFixed(4));

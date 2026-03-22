@@ -146,8 +146,9 @@ body {
   margin-top: 18px;
   padding: 26px;
   border-radius: var(--about-radius);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.015));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 }
 
 .section .card h2 {
@@ -255,6 +256,17 @@ main footer {
   height: 185vh;
 }
 
+.job-scroll-hero-split {
+  height: auto;
+}
+
+.job-scroll-hero-split .job-scroll-stage {
+  position: relative;
+  top: 0;
+  margin-top: var(--topbar-offset);
+  height: calc(100vh - var(--topbar-offset));
+}
+
 .job-scroll-stage {
   --scene-progress: 0;
   --topbar-offset: 76px;
@@ -330,6 +342,85 @@ main footer {
   max-width: 620px;
   color: var(--about-soft);
   font-size: 1.12rem;
+}
+
+@media (min-width: 961px) {
+  .job-scroll-hero-split .job-scroll-stage::before {
+    display: none;
+  }
+
+  .job-scroll-hero-split .job-scroll-overlay {
+    position: relative;
+    z-index: 3;
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
+    transform: none;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .job-scroll-hero-split .job-scroll-copy {
+    width: min(620px, calc(100% - 40px));
+    margin-left: max(20px, calc((100vw - var(--max)) / 2 + 20px));
+    padding-top: 110px;
+    padding-bottom: 70px;
+    padding-right: 42px;
+  }
+
+  .job-scroll-hero-split .job-scroll-photo-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(50vw, 760px);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .job-scroll-hero-split .job-scroll-photo-wrap::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      linear-gradient(
+        90deg,
+        rgba(6, 6, 6, 1) 0%,
+        rgba(6, 6, 6, 0.95) 3%,
+        rgba(6, 6, 6, 0.82) 8%,
+        rgba(6, 6, 6, 0.60) 14%,
+        rgba(6, 6, 6, 0.36) 22%,
+        rgba(6, 6, 6, 0.14) 33%,
+        rgba(6, 6, 6, 0.04) 46%,
+        rgba(6, 6, 6, 0.00) 92%
+      );
+    pointer-events: none;
+  }
+
+  .job-scroll-hero-split .job-scroll-photo-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background:
+      linear-gradient(
+        to top,
+        rgba(6, 6, 6, 0.28) 0%,
+        rgba(6, 6, 6, 0.10) 24%,
+        rgba(6, 6, 6, 0.00) 48%
+      );
+    pointer-events: none;
+  }
 }
 
 @media (max-width: 680px) {
