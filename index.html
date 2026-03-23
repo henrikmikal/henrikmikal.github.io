@@ -6,7 +6,7 @@
   <title>Henrik Mikal Wilhelmsen</title>
   <meta
     name="description"
-    content="E-portefølje og personlig nettside for Henrik Mikal Wilhelmsen, elkraftstudent med bakgrunn som elektriker."
+    content="Personlig nettside for Henrik Mikal Wilhelmsen, elkraftstudent med bakgrunn som elektriker."
   />
   <link rel="stylesheet" href="css/base.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -26,10 +26,10 @@
           <div class="mobile-menu-panel">
             <a href="#about" data-no="Om meg" data-en="About">Om meg</a>
             <a href="utdanning/" data-no="Utdanning" data-en="Education">Utdanning</a>
-            <a href="#portfolio" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</a>
-            <a href="#projects" data-no="Prosjekter" data-en="Projects">Prosjekter</a>
+            <a href="#arbeidsmetode" data-no="Min arbeidsmetode" data-en="My work method">Min arbeidsmetode</a>
+            <a href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
             <a href="#experience" data-no="Erfaring" data-en="Experience">Erfaring</a>
-            <a href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+            <a href="#contact" data-no="Kontakt meg" data-en="Contact me">Kontakt meg</a>
           </div>
         </details>
       </div>
@@ -44,19 +44,19 @@
           </div>
         </div>
         <a href="utdanning/" data-no="Utdanning" data-en="Education">Utdanning</a>
-        <a href="#portfolio" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</a>
+        <a href="#arbeidsmetode" data-no="Min arbeidsmetode" data-en="My work method">Min arbeidsmetode</a>
         <div class="nav-item nav-item-dropdown">
           <a href="#projects" class="nav-link-main" aria-haspopup="true">
-            <span data-no="Prosjekter" data-en="Projects">Prosjekter</span>
+            <span data-no="Se prosjekter" data-en="View projects">Se prosjekter</span>
           </a>
           <div class="nav-dropdown" role="menu" aria-label="Project links">
-            <a href="#project-energy" role="menuitem" data-no="Energi og styring" data-en="Energy and control">Energi og styring</a>
-            <a href="#project-power" role="menuitem" data-no="Kraftsystemanalyse" data-en="Power system analysis">Kraftsystemanalyse</a>
-            <a href="#project-docs" role="menuitem" data-no="Dokumentasjon og LaTeX" data-en="Documentation and LaTeX">Dokumentasjon og LaTeX</a>
+            <a href="projects/energy-control/" role="menuitem" data-no="Energi og styring" data-en="Energy and control">Energi og styring</a>
+            <a href="projects/power-system-analysis/" role="menuitem" data-no="Kraftsystemanalyse" data-en="Power system analysis">Kraftsystemanalyse</a>
+            <a href="projects/documentation-latex/" role="menuitem" data-no="Dokumentasjon og LaTeX" data-en="Documentation and LaTeX">Dokumentasjon og LaTeX</a>
           </div>
         </div>
         <a href="#experience" data-no="Erfaring" data-en="Experience">Erfaring</a>
-        <a href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+        <a href="#contact" data-no="Kontakt meg" data-en="Contact me">Kontakt meg</a>
       </nav>
 
       <div class="topbar-actions">
@@ -100,7 +100,7 @@
 
         <div class="hero-actions">
           <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
-          <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+          <a class="button secondary" href="#contact" data-no="Kontakt meg" data-en="Contact me">Kontakt meg</a>
         </div>
       </div>
     </div>
@@ -130,7 +130,7 @@
 
         <div class="hero-actions">
           <a class="button primary" href="#projects" data-no="Se prosjekter" data-en="View projects">Se prosjekter</a>
-          <a class="button secondary" href="#contact" data-no="Kontakt" data-en="Contact">Kontakt</a>
+          <a class="button secondary" href="#contact" data-no="Kontakt meg" data-en="Contact me">Kontakt meg</a>
         </div>
       </div>
     </div>
@@ -165,51 +165,52 @@
       </div>
     </section>
 
-    <section class="content-section" id="portfolio">
+    <section class="content-section" id="arbeidsmetode">
       <div class="wrap">
         <div class="section-head">
-          <div class="section-label" data-no="E-portefølje" data-en="E-portfolio">E-portefølje</div>
-        </div>
+          <div class="section-label" data-no="Min arbeidsmetode" data-en="My work method">Min arbeidsmetode</div>
 
-        <p
-          class="section-copy"
-          data-no="Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser, arbeidsgivere og samarbeidspartnere."
-          data-en="This section gathers work that shows progression, reflection and technical breadth. It is meant to serve both as academic documentation and as a professional front toward internships, employers and future collaborators."
-        >
-          Her samler jeg arbeid som viser progresjon, refleksjon og teknisk bredde. Denne delen skal fungere både som dokumentasjon for studiet og som et profesjonelt vindu mot praksisplasser, arbeidsgivere og samarbeidspartnere.
-        </p>
+          <div class="section-copy">
+            <p
+              data-no="Jeg jobber strukturert fra planlegging til ferdig levering. Målet er alltid å kombinere praktisk gjennomføring med teknisk kvalitet og tydelig dokumentasjon."
+              data-en="I work in a structured way from planning to final delivery. The goal is always to combine practical execution with technical quality and clear documentation."
+            >
+              Jeg jobber strukturert fra planlegging til ferdig levering. Målet er alltid å kombinere praktisk gjennomføring med teknisk kvalitet og tydelig dokumentasjon.
+            </p>
+          </div>
+        </div>
 
         <div class="grid-3">
           <article class="card">
-            <div class="card-tag" data-no="Studiearbeid" data-en="Coursework">Studiearbeid</div>
-            <h3 data-no="Ingeniørprosjekter" data-en="Engineering projects">Ingeniørprosjekter</h3>
+            <div class="card-tag" data-no="1. Forståelse" data-en="1. Understanding">1. Forståelse</div>
+            <h3 data-no="Kartlegger behov og rammer" data-en="Map needs and constraints">Kartlegger behov og rammer</h3>
             <p
-              data-no="Rapporter, analyser, beregninger og tekniske oppgaver fra studiet."
-              data-en="Reports, analyses, calculations and technical coursework from my studies."
+              data-no="Jeg starter med å avklare mål, forutsetninger og krav før jeg velger løsning."
+              data-en="I start by clarifying goals, assumptions and requirements before choosing a solution."
             >
-              Rapporter, analyser, beregninger og tekniske oppgaver fra studiet.
+              Jeg starter med å avklare mål, forutsetninger og krav før jeg velger løsning.
             </p>
           </article>
 
           <article class="card">
-            <div class="card-tag" data-no="Teknologi" data-en="Technology">Teknologi</div>
-            <h3 data-no="Kode og systemer" data-en="Code and systems">Kode og systemer</h3>
+            <div class="card-tag" data-no="2. Utførelse" data-en="2. Execution">2. Utførelse</div>
+            <h3 data-no="Bygger trinnvis og tester underveis" data-en="Build stepwise and test continuously">Bygger trinnvis og tester underveis</h3>
             <p
-              data-no="Python, C, LaTeX, Multisim og tekniske løsninger med praktisk nytte."
-              data-en="Python, C, LaTeX, Multisim and technical solutions with practical value."
+              data-no="Jeg deler arbeidet i mindre deler, kvalitetssikrer underveis og justerer raskt ved behov."
+              data-en="I break work into smaller parts, verify quality as I go and adjust quickly when needed."
             >
-              Python, C, LaTeX, Multisim og tekniske løsninger med praktisk nytte.
+              Jeg deler arbeidet i mindre deler, kvalitetssikrer underveis og justerer raskt ved behov.
             </p>
           </article>
 
           <article class="card">
-            <div class="card-tag" data-no="Utvikling" data-en="Development">Utvikling</div>
-            <h3 data-no="Refleksjon og progresjon" data-en="Reflection and growth">Refleksjon og progresjon</h3>
+            <div class="card-tag" data-no="3. Leveranse" data-en="3. Delivery">3. Leveranse</div>
+            <h3 data-no="Dokumenterer og forbedrer" data-en="Document and improve">Dokumenterer og forbedrer</h3>
             <p
-              data-no="Hvordan jeg utvikler meg faglig, hva jeg lærer og hvor jeg vil videre."
-              data-en="How I develop academically, what I learn and where I want to grow."
+              data-no="Jeg avslutter med tydelig dokumentasjon, refleksjon over resultatet og forbedringspunkter til neste oppgave."
+              data-en="I finish with clear documentation, reflection on results and improvement points for the next task."
             >
-              Hvordan jeg utvikler meg faglig, hva jeg lærer og hvor jeg vil videre.
+              Jeg avslutter med tydelig dokumentasjon, refleksjon over resultatet og forbedringspunkter til neste oppgave.
             </p>
           </article>
         </div>
@@ -219,7 +220,7 @@
     <section class="content-section" id="projects">
       <div class="wrap">
         <div class="section-head">
-          <div class="section-label" data-no="Prosjekter" data-en="Projects">Prosjekter</div>
+          <div class="section-label" data-no="Se prosjekter" data-en="View projects">Se prosjekter</div>
         </div>
 
         <div class="grid-3">
@@ -234,6 +235,7 @@
             >
               Arbeid med praktiske og teoretiske løsninger der energibruk, styring og teknisk funksjon kobles sammen.
             </p>
+            <a class="chip cta-small" href="projects/energy-control/" data-no="Åpne prosjektside" data-en="Open project page">Åpne prosjektside</a>
           </article>
 
           <article class="card" id="project-power">
@@ -247,6 +249,7 @@
             >
               Faglig arbeid med blant annet IT-nett, TN-nett, feilforhold og tekniske konsekvenser i elkraftsystemer.
             </p>
+            <a class="chip cta-small" href="projects/power-system-analysis/" data-no="Åpne prosjektside" data-en="Open project page">Åpne prosjektside</a>
           </article>
 
           <article class="card" id="project-docs">
@@ -260,6 +263,7 @@
             >
               Profesjonelle rapporter med struktur, referanser, dokumentasjon og ingeniørfaglig presentasjon.
             </p>
+            <a class="chip cta-small" href="projects/documentation-latex/" data-no="Åpne prosjektside" data-en="Open project page">Åpne prosjektside</a>
           </article>
         </div>
       </div>
@@ -420,19 +424,37 @@
       </div>
     </section>
 
+    <section class="content-section" id="education-short">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-label" data-no="Utdanning" data-en="Education">Utdanning</div>
+        </div>
+
+        <div class="card education-short-card">
+          <ul class="education-short-list">
+            <li data-no="NTNU - Elkraft og bærekraftig energi" data-en="NTNU - Electrical power and sustainable energy">NTNU - Elkraft og bærekraftig energi</li>
+            <li data-no="Fagbrev som elektriker" data-en="Trade certificate as an electrician">Fagbrev som elektriker</li>
+          </ul>
+          <div class="hero-actions" style="margin-top: 12px;">
+            <a class="chip cta-small" href="utdanning/" data-no="Åpne utdanning" data-en="Open education">Åpne utdanning</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="content-section" id="contact">
       <div class="wrap">
         <div class="section-head">
-          <div class="section-label" data-no="Kontakt" data-en="Contact">Kontakt</div>
+          <div class="section-label" data-no="Kontakt meg" data-en="Contact me">Kontakt meg</div>
         </div>
 
         <div class="contact-box">
           <p
             class="section-copy"
-            data-no="Denne siden er en første versjon av min digitale portefølje. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert."
-            data-en="This is the first version of my digital portfolio. The next step is to expand the project section, add a CV and make the content even more concrete and project based."
+            data-no="Denne siden er fortsatt under utvikling. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert."
+            data-en="This website is still in development. The next step is to expand the project section, add a CV and make the content even more concrete and project based."
           >
-            Denne siden er en første versjon av min digitale portefølje. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert.
+            Denne siden er fortsatt under utvikling. Neste steg er å bygge ut prosjekter med egne undersider, legge inn CV og gjøre innholdet enda mer konkret og prosjektbasert.
           </p>
 
           <div class="contact-links">

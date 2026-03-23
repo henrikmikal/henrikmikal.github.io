@@ -218,6 +218,12 @@
   font-size: 0.95rem;
 }
 
+.back-link::before {
+  content: "\2190";
+  display: inline-block;
+  line-height: 1;
+}
+
 .lang-toggle {
   position: relative;
   width: 94px;
@@ -302,6 +308,12 @@
   background: rgba(255, 255, 255, 0.03);
 }
 
+.cta-small {
+  margin-top: 14px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+}
+
 #about .button.secondary {
   border-color: rgba(255, 255, 255, 0.14);
   color: var(--soft);
@@ -333,6 +345,29 @@
 
 .card {
   padding: 22px;
+}
+
+.education-short-card {
+  padding: 16px 18px;
+}
+
+.education-short-text {
+  margin: 0;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  color: var(--soft);
+}
+
+.education-short-list {
+  margin: 0;
+  padding-left: 20px;
+  font-size: 0.96rem;
+  line-height: 1.45;
+  color: var(--soft);
+}
+
+.education-short-list li + li {
+  margin-top: 4px;
 }
 
 .card-tag {
