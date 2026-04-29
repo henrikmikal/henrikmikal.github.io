@@ -8,12 +8,24 @@
 		name="description"
 		content="Oversikt over utdanning, karakterutskrifter og emner fra NTNU."
 	/>
+	<script src="../config.js"></script>
+	<script src="../js/maintenance.js"></script>
 	<link rel="stylesheet" href="../css/base.css" />
 	<link rel="stylesheet" href="../css/components.css" />
+	<link rel="stylesheet" href="../css/maintenance.css" />
 	<link rel="stylesheet" href="../css/responsive.css" />
 	<link rel="stylesheet" href="../css/education.css" />
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+	<div class="maintenance-overlay" aria-live="polite" role="status">
+	  <div class="maintenance-panel">
+	    <h1>Website Under Development</h1>
+	    <p class="maintenance-message">This website is currently being updated. Please check back later.</p>
+	    <p class="maintenance-footer">Henrik Mikal Wilhelmsen</p>
+	  </div>
+	</div>
+
 	<header class="topbar topbar-sticky">
 		<div class="wrap topbar-inner">
 			<a href="../index.html" class="brand">HMW</a>
@@ -48,10 +60,10 @@
 			<h1 data-no="Norges teknisk-naturvitenskapelige universitet" data-en="Norwegian University of Science and Technology">Norges teknisk-naturvitenskapelige universitet</h1>
 			<p
 				class="lead"
-				data-no="Her samler jeg emner, refleksjoner og dokumentasjon fra studiet."
-				data-en="Here I collect courses, reflections and documentation from my studies."
+				data-no="Elkraftingeniørstudent (pågående, fra juni 2025) med planlagt spesialisering innen elkraft."
+				data-en="Electrical power engineering student (ongoing, from June 2025) with planned specialization in power systems."
 			>
-				Her samler jeg emner, refleksjoner og dokumentasjon fra studiet.
+				Elkraftingeniørstudent (pågående, fra juni 2025) med planlagt spesialisering innen elkraft.
 			</p>
 		</section>
 
@@ -66,38 +78,93 @@
 			<div class="topic-list">
 				<article class="topic-item">
 					<h3 data-no="ELEG1001 - Elektriske kretser - introduksjon" data-en="ELEG1001 - Electrical circuits - introduction">ELEG1001 - Elektriske kretser - introduksjon</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
-				</article>
-				<article class="topic-item">
-					<h3 data-no="HMS0010 - HMS-kurs for 1. årsstudenter Gjøvik" data-en="HMS0010 - Health, Safety and Environment (HSE) course for 1st year students - Gjovik">HMS0010 - HMS-kurs for 1. årsstudenter Gjøvik</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
-				</article>
-				<article class="topic-item">
-					<h3 data-no="IELEG1040 - Digitalteknikk og programmering" data-en="IELEG1040 - Digital Circuits and Programming">IELEG1040 - Digitalteknikk og programmering</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
-				</article>
-				<article class="topic-item">
-					<h3 data-no="IMAG1002 - Matematikk for ingeniørfag 1" data-en="IMAG1002 - Mathematics for engineering 1">IMAG1002 - Matematikk for ingeniørfag 1</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
+					<p data-no="Høst 2025&#10;Jeg utviklet en solid forståelse for grunnleggende kretsanalyse og hvordan kretser kan modelleres. Jeg anvendte grunnleggende metoder for forenkling og beregninger, særlig node- og sløyfeanalyse, superposisjonsprinsippet og Thevenin- og Norton-ekvivalenter. Modellering av RC-, RL- og RLC-kretser ga meg forståelse for hvordan transiente forløp utvikler seg.&#10;&#10;Gjennom laboratoriearbeid har jeg knyttet teori opp mot praksis, der jeg fikk verdifull erfaring med bruk av oscilloskop. Kombinasjonen av håndberegninger og simuleringsverktøy har gitt meg en solid grunnmur for videre utvikling. Jeg fikk også erfaring med å bruke Python til å utføre og automatisere beregninger, noe som effektiviserte analysearbeidet og gjorde det enklere å håndtere mer komplekse problemstillinger. Samtidig fikk jeg igjen bekreftet viktigheten av strukturert arbeid og god dokumentasjon for å kunne gjenskape og bruke denne kunnskapen videre." data-en="Autumn 2025&#10;I developed a solid understanding of fundamental circuit analysis and how circuits can be modeled. I applied basic methods for simplification and calculations, particularly node and loop analysis, the superposition principle, and Thevenin and Norton equivalents. Modeling of RC, RL, and RLC circuits gave me understanding of how transient responses develop.&#10;&#10;Through laboratory work, I connected theory with practice, gaining valuable experience using oscilloscopes. The combination of hand calculations and simulation tools has given me a solid foundation for further development. I also gained experience using Python to perform and automate calculations, which streamlined the analysis work and made it easier to handle more complex problems. At the same time, I was again reminded of the importance of structured work and good documentation to be able to recreate and apply this knowledge further.">Høst 2025
+Jeg utviklet en solid forståelse for grunnleggende kretsanalyse og hvordan kretser kan modelleres. Jeg anvendte grunnleggende metoder for forenkling og beregninger, særlig node- og sløyfeanalyse, superposisjonsprinsippet og Thevenin- og Norton-ekvivalenter. Modellering av RC-, RL- og RLC-kretser ga meg forståelse for hvordan transiente forløp utvikler seg.
+
+Gjennom laboratoriearbeid har jeg knyttet teori opp mot praksis, der jeg fikk verdifull erfaring med bruk av oscilloskop. Kombinasjonen av håndberegninger og simuleringsverktøy har gitt meg en solid grunnmur for videre utvikling. Jeg fikk også erfaring med å bruke Python til å utføre og automatisere beregninger, noe som effektiviserte analysearbeidet og gjorde det enklere å håndtere mer komplekse problemstillinger. Samtidig fikk jeg igjen bekreftet viktigheten av strukturert arbeid og god dokumentasjon for å kunne gjenskape og bruke denne kunnskapen videre.</p>
+					<div class="grade-badge-container">
+						<span class="course-grade" data-no="Karakter: A" data-en="Grade: A">Karakter: A</span>
+						<div class="grade-popup">
+							<canvas id="gradePopupChart" class="grade-graph"></canvas>
+						</div>
+					</div>
 				</article>
 				<article class="topic-item">
 					<h3 data-no="INGG1002 - Programmering, numerikk og sikkerhet" data-en="INGG1002 - Programming, numerical mathematics and security">INGG1002 - Programmering, numerikk og sikkerhet</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
+					<p data-no="Høst 2025&#10;Emnet ga meg en innføring i programmering i Python, med særlig fokus på anvendelse i numeriske beregninger, samt viktigheten av IKT-sikkerhet.&#10;&#10;Gjennom praktiske oppgaver bygde jeg opp ferdigheter i Python-programmering. Jeg videreutviklet evnen til å formulere tekniske problemstillinger og implementere løsninger ved hjelp av Python. Strukturert og ryddig kode var et sentralt fokus, noe som ga verdifull erfaring gjennom praktisk arbeid. Kurset utviklet mine grunnleggende ferdigheter i å bruke programmering som et verktøy for å analysere og løse matematiske problemstillinger.&#10;&#10;Videre brukte jeg Python aktivt i numeriske metoder, der jeg arbeidet med å løse likninger og differensialligninger, samt analysere og tolke resultater. Dette ga meg en praktisk forståelse for hvordan programmering kan brukes til å håndtere beregninger som er krevende eller lite hensiktsmessige å utføre for hånd. Emnet inkluderte også en innføring i IKT-sikkerhet, med fokus på grunnleggende begreper som trusler, sårbarheter og risikovurdering." data-en="Autumn 2025&#10;The course gave me an introduction to programming in Python, with a particular focus on applications in numerical calculations, as well as the importance of ICT security.&#10;&#10;Through practical assignments, I built up skills in Python programming. I further developed the ability to formulate technical problems and implement solutions using Python. Structured and tidy code was a central focus, which provided valuable experience through practical work. The course developed my fundamental skills in using programming as a tool to analyze and solve mathematical problems.&#10;&#10;Furthermore, I actively used Python in numerical methods, where I worked on solving equations and differential equations, as well as analyzing and interpreting results. This gave me a practical understanding of how programming can be used to handle calculations that are demanding or not practical to perform by hand. The course also included an introduction to ICT security, focusing on core concepts such as threats, vulnerabilities, and risk assessment.">Høst 2025
+Emnet ga meg en innføring i programmering i Python, med særlig fokus på anvendelse i numeriske beregninger, samt viktigheten av IKT-sikkerhet.
+
+Gjennom praktiske oppgaver bygde jeg opp ferdigheter i Python-programmering. Jeg videreutviklet evnen til å formulere tekniske problemstillinger og implementere løsninger ved hjelp av Python. Strukturert og ryddig kode var et sentralt fokus, noe som ga verdifull erfaring gjennom praktisk arbeid. Kurset utviklet mine grunnleggende ferdigheter i å bruke programmering som et verktøy for å analysere og løse matematiske problemstillinger.
+
+Videre brukte jeg Python aktivt i numeriske metoder, der jeg arbeidet med å løse likninger og differensialligninger, samt analysere og tolke resultater. Dette ga meg en praktisk forståelse for hvordan programmering kan brukes til å håndtere beregninger som er krevende eller lite hensiktsmessige å utføre for hånd. Emnet inkluderte også en innføring i IKT-sikkerhet, med fokus på grunnleggende begreper som trusler, sårbarheter og risikovurdering.</p>
+					<span class="course-grade" data-no="Bestått" data-en="Passed">Bestått</span>
+				</article>
+				<article class="topic-item">
+					<h3 data-no="IELEG1040 - Digitalteknikk og programmering" data-en="IELEG1040 - Digital Circuits and Programming">IELEG1040 - Digitalteknikk og programmering</h3>
+					<p data-no="Høst 2025&#10;Emnet ga meg en innføring i digitalteknikk og utvikling av programmer i C.&#10;&#10;Gjennom programmeringsdelen utviklet jeg evnen til å strukturere og implementere løsninger på tekniske problemstillinger i C. Jeg lærte å bryte ned problemer i mindre deler, bygge opp logikk steg for steg og utvikle kode som er både lesbar og funksjonell. Arbeidet med programmering ga meg også erfaring med testing, feilsøking og forbedring av egne løsninger.&#10;&#10;Gjennom digitalteknikkdelen utviklet jeg ferdigheter i å analysere og forenkle logiske problemstillinger, og oversette disse til strukturerte løsninger. Jeg arbeidet med boolsk algebra og logiske kretser, der jeg lærte å bruke Karnaugh-diagram for forenkling og fikk forståelse for kombinatoriske og sekvensielle kretser, inkludert vipper og tellere." data-en="Autumn 2025&#10;The course gave me an introduction to digital electronics and development of programs in C.&#10;&#10;Through the programming part, I developed the ability to structure and implement solutions to technical problems in C. I learned to break down problems into smaller parts, build logic step by step, and develop code that is both readable and functional. The programming work also gave me experience with testing, debugging, and improving my own solutions.&#10;&#10;Through the digital electronics part, I developed skills in analyzing and simplifying logical problems, and translating them into structured solutions. I worked with Boolean algebra and logic circuits, where I learned to use Karnaugh maps for simplification and gained understanding of combinational and sequential circuits, including flip-flops and counters.">Høst 2025
+Emnet ga meg en innføring i digitalteknikk og utvikling av programmer i C.
+
+Gjennom programmeringsdelen utviklet jeg evnen til å strukturere og implementere løsninger på tekniske problemstillinger i C. Jeg lærte å bryte ned problemer i mindre deler, bygge opp logikk steg for steg og utvikle kode som er både lesbar og funksjonell. Arbeidet med programmering ga meg også erfaring med testing, feilsøking og forbedring av egne løsninger.
+
+Gjennom digitalteknikkdelen utviklet jeg ferdigheter i å analysere og forenkle logiske problemstillinger, og oversette disse til strukturerte løsninger. Jeg arbeidet med boolsk algebra og logiske kretser, der jeg lærte å bruke Karnaugh-diagram for forenkling og fikk forståelse for kombinatoriske og sekvensielle kretser, inkludert vipper og tellere.</p>
+					<div class="grade-badge-container">
+						<span class="course-grade" data-no="Karakter: A" data-en="Grade: A">Karakter: A</span>
+						<div class="grade-popup">
+							<canvas id="gradePopupChart-IELEG" class="grade-graph"></canvas>
+						</div>
+					</div>
+				</article>
+				<article class="topic-item">
+					<h3 data-no="IMAG1002 - Matematikk for ingeniørfag 1" data-en="IMAG1002 - Mathematics for engineering 1">IMAG1002 - Matematikk for ingeniørfag 1</h3>
+				<p data-no="Høst 2025&#10;I dette faget lærte jeg bruk av lineær algebra, kalkulus og differensialligninger, samt bruk av komplekse tall som et verktøy for modellering og analyse. Gjennom lineær algebra lærte jeg å løse ligningssystemer med matriseregning og forstå sentrale begreper som vektorrom, basis og lineær avhengighet. Jeg fikk også innsikt i egenverdier og egenvektorer, og hvordan disse brukes til å analysere systemer.&#10;&#10;I kalkulusdelen lærte jeg å løse differensialligninger, som jeg fikk bruke i analyse av systemer. Her fikk jeg se sammenhengen mellom det fysiske og det matematiske. Videre arbeidet jeg med komplekse tall, noe som har gitt en solid forståelse som jeg tok med meg videre til de elektrotekniske fagene.&#10;&#10;Gjennom modellering ved bruk av Python utviklet jeg også mine ferdigheter innen programmering, spesielt knyttet til analyse og simulering av matematiske modeller, samt visualisering av resultater." data-en="Autumn 2025&#10;In this subject, I learned the use of linear algebra, calculus, and differential equations, as well as the use of complex numbers as a tool for modeling and analysis. Through linear algebra, I learned to solve systems of equations with matrix calculations and understand key concepts such as vector spaces, basis, and linear dependence. I also gained insight into eigenvalues and eigenvectors, and how these are used to analyze systems.&#10;&#10;In the calculus section, I learned to solve differential equations, which I was able to use in system analysis. Here I saw the connection between the physical and the mathematical. Furthermore, I worked with complex numbers, which has given me a solid understanding that I carried forward into the electrical engineering subjects.&#10;&#10;Through modeling using Python, I also developed my programming skills, especially related to analysis and simulation of mathematical models, as well as visualization of results.">Høst 2025
+I dette faget lærte jeg bruk av lineær algebra, kalkulus og differensialligninger, samt bruk av komplekse tall som et verktøy for modellering og analyse. Gjennom lineær algebra lærte jeg å løse ligningssystemer med matriseregning og forstå sentrale begreper som vektorrom, basis og lineær avhengighet. Jeg fikk også innsikt i egenverdier og egenvektorer, og hvordan disse brukes til å analysere systemer.
+
+I kalkulusdelen lærte jeg å løse differensialligninger, som jeg fikk bruke i analyse av systemer. Her fikk jeg se sammenhengen mellom det fysiske og det matematiske. Videre arbeidet jeg med komplekse tall, noe som har gitt en solid forståelse som jeg tok med meg videre til de elektrotekniske fagene.
+
+Gjennom modellering ved bruk av Python utviklet jeg også mine ferdigheter innen programmering, spesielt knyttet til analyse og simulering av matematiske modeller, samt visualisering av resultater.</p>
+				<div class="grade-badge-container">
+					<span class="course-grade" data-no="Karakter: A" data-en="Grade: A">Karakter: A</span>
+					<div class="grade-popup">
+						<canvas id="gradePopupChart-IMAG" class="grade-graph"></canvas>
+					</div>
+				</div>
+				</article>
+				<article class="topic-item">
+					<h3 data-no="HMS0010 - HMS-kurs for 1. årsstudenter Gjøvik" data-en="HMS0010 - Health, Safety and Environment (HSE) course for 1st year students - Gjovik">HMS0010 - HMS-kurs for 1. årsstudenter Gjøvik</h3>
+					<p data-no="Høst 2025&#10;Kurset ga grunnleggende opplæring i helse, miljø og sikkerhet, med fokus på brannvern og førstehjelp.&#10;&#10;Jeg fikk både teoretisk og praktisk trening i brannforebygging, slukkearbeid og evakueringsrutiner. Dette inkluderte håndtering av ulike typer branntilløp og vurdering av riktige tiltak i en akuttsituasjon. Innen førstehjelp lærte jeg grunnleggende prinsipper for å håndtere ulykkessituasjoner, med særlig fokus på hjerte-lunge-redning (HLR) og bruk av hjertestarter. Gjennom praktiske øvelser fikk jeg erfaring med å handle raskt og strukturert i kritiske situasjoner.&#10;&#10;Kurset har gitt meg økt bevissthet rundt risikovurdering, sikkerhet og korrekt håndtering av nødsituasjoner, både i studiehverdagen og i arbeidssammenheng." data-en="Autumn 2025&#10;The course provided foundational training in health, safety, and environment, with a focus on fire safety and first aid.&#10;&#10;I received both theoretical and practical training in fire prevention, extinguishing work, and evacuation procedures. This included handling different types of fire incidents and assessing the correct measures in an emergency situation. In first aid, I learned core principles for handling accident situations, with particular focus on cardiopulmonary resuscitation (CPR) and use of a defibrillator. Through practical exercises, I gained experience in acting quickly and in a structured way in critical situations.&#10;&#10;The course has increased my awareness of risk assessment, safety, and proper handling of emergency situations, both in my studies and in work contexts.">Høst 2025
+Kurset ga grunnleggende opplæring i helse, miljø og sikkerhet, med fokus på brannvern og førstehjelp.
+
+Jeg fikk både teoretisk og praktisk trening i brannforebygging, slukkearbeid og evakueringsrutiner. Dette inkluderte håndtering av ulike typer branntilløp og vurdering av riktige tiltak i en akuttsituasjon. Innen førstehjelp lærte jeg grunnleggende prinsipper for å håndtere ulykkessituasjoner, med særlig fokus på hjerte-lunge-redning (HLR) og bruk av hjertestarter. Gjennom praktiske øvelser fikk jeg erfaring med å handle raskt og strukturert i kritiske situasjoner.
+
+Kurset har gitt meg økt bevissthet rundt risikovurdering, sikkerhet og korrekt håndtering av nødsituasjoner, både i studiehverdagen og i arbeidssammenheng.</p>
+					<span class="course-grade" data-no="Bestått" data-en="Passed">Bestått</span>
 				</article>
 				<article class="topic-item">
 					<h3 data-no="REA0012 - Forkurs i matematikk for TRES og y-vei" data-en="REA0012 - Preparatory Course in Mathematics for TRES">REA0012 - Forkurs i matematikk for TRES og y-vei</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
+					<p data-no="Høst 2025&#10;Emnet ga meg et solid grunnlag i matematikk, med fokus på algebra, funksjoner, trigonometri, derivasjon og integrasjon.&#10;&#10;Gjennom arbeidet utviklet jeg gode ferdigheter i å regne systematisk og håndtere ligninger, uttrykk og funksjoner. Jeg lærte å analysere grafer og sammenhenger, og å bruke matematikk som et verktøy for å beskrive og løse problemer. Arbeidet med derivasjon og integrasjon ga meg forståelse for hvordan man kan analysere endring og beregne størrelser, noe som er sentralt i videre tekniske fag.&#10;&#10;Emnet ga også en kort innføring i Python, brukt som støtte for enkle matematiske beregninger.&#10;&#10;Kurset har gitt meg et nødvendig matematisk grunnlag for videre studier innen ingeniørfag." data-en="Autumn 2025&#10;The course gave me a solid foundation in mathematics, with a focus on algebra, functions, trigonometry, differentiation, and integration.&#10;&#10;Through the work, I developed strong skills in systematic calculation and handling equations, expressions, and functions. I learned to analyze graphs and relationships, and to use mathematics as a tool to describe and solve problems. Work with differentiation and integration gave me an understanding of how to analyze change and calculate quantities, which is central in further technical subjects.&#10;&#10;The course also provided a brief introduction to Python, used as support for simple mathematical calculations.&#10;&#10;The course has given me a necessary mathematical foundation for further studies in engineering.">Høst 2025
+Emnet ga meg et solid grunnlag i matematikk, med fokus på algebra, funksjoner, trigonometri, derivasjon og integrasjon.
+
+Gjennom arbeidet utviklet jeg gode ferdigheter i å regne systematisk og håndtere ligninger, uttrykk og funksjoner. Jeg lærte å analysere grafer og sammenhenger, og å bruke matematikk som et verktøy for å beskrive og løse problemer. Arbeidet med derivasjon og integrasjon ga meg forståelse for hvordan man kan analysere endring og beregne størrelser, noe som er sentralt i videre tekniske fag.
+
+Emnet ga også en kort innføring i Python, brukt som støtte for enkle matematiske beregninger.
+
+Kurset har gitt meg et nødvendig matematisk grunnlag for videre studier innen ingeniørfag.</p>
+					<div class="grade-badge-container">
+						<span class="course-grade" data-no="Karakter: A" data-en="Grade: A">Karakter: A</span>
+						<div class="grade-popup">
+							<canvas id="gradePopupChart-REA0012" class="grade-graph"></canvas>
+						</div>
+					</div>
 				</article>
 				<article class="topic-item">
 					<h3 data-no="REA0021 - Forkurs i fysikk for TRES" data-en="REA0021 - Preparatory Course in Physics for TRES">REA0021 - Forkurs i fysikk for TRES</h3>
-					<p data-no="Høst 2025&#10;Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte." data-en="Autumn 2025&#10;About the course: Add your own short text about what you worked on and learned.">Høst 2025
-Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
+					<p data-no="Høst 2025&#10;Emnet ga meg en bred, grunnleggende forståelse av sentrale fysikkbegreper som krefter, bevegelse, energi og elektrisitet.&#10;&#10;Gjennom arbeidet utviklet jeg evnen til å analysere fysiske problemstillinger og anvende grunnleggende lover som Newtons lover og energibevaring for å beskrive og løse oppgaver. Jeg fikk også innsikt i elektriske størrelser som spenning, strøm og effekt, samt sammenhenger mellom disse. Videre arbeidet jeg med temaer innen termofysikk, trykk og væsker, som ga en helhetlig forståelse for hvordan fysiske prinsipper beskriver ulike systemer.&#10;&#10;Emnet har gitt meg et nødvendig teoretisk grunnlag for videre fag innen fysikk og elektroteknikk, og styrket evnen til å koble matematiske metoder til fysiske problemstillinger." data-en="Autumn 2025&#10;The course gave me a broad, foundational understanding of central physics concepts such as forces, motion, energy, and electricity.&#10;&#10;Through the work, I developed the ability to analyze physical problems and apply fundamental laws such as Newton's laws and energy conservation to describe and solve tasks. I also gained insight into electrical quantities such as voltage, current, and power, as well as the relationships between them. Furthermore, I worked with topics in thermophysics, pressure, and fluids, which gave me a comprehensive understanding of how physical principles describe different systems.&#10;&#10;The course has given me a necessary theoretical foundation for further studies in physics and electrical engineering, and strengthened my ability to connect mathematical methods to physical problem solving.">Høst 2025
+Emnet ga meg en bred, grunnleggende forståelse av sentrale fysikkbegreper som krefter, bevegelse, energi og elektrisitet.
+
+Gjennom arbeidet utviklet jeg evnen til å analysere fysiske problemstillinger og anvende grunnleggende lover som Newtons lover og energibevaring for å beskrive og løse oppgaver. Jeg fikk også innsikt i elektriske størrelser som spenning, strøm og effekt, samt sammenhenger mellom disse. Videre arbeidet jeg med temaer innen termofysikk, trykk og væsker, som ga en helhetlig forståelse for hvordan fysiske prinsipper beskriver ulike systemer.
+
+Emnet har gitt meg et nødvendig teoretisk grunnlag for videre fag innen fysikk og elektroteknikk, og styrket evnen til å koble matematiske metoder til fysiske problemstillinger.</p>
+					<span class="course-grade" data-no="Bestått" data-en="Passed">Bestått</span>
 				</article>
 			</div>
 		</section>
@@ -114,23 +181,21 @@ Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
 					alt="Finnmark fylkeskommune logo"
 				/>
 				<h2 data-no="Alta videregående skole" data-en="Alta upper secondary school">Alta videregående skole</h2>
-				<p
-					data-no="Denne delen er klar for innhold fra videregående skole."
-					data-en="This section is ready for upper secondary school content."
-				>
-					Denne delen er klar for innhold fra videregående skole.
-				</p>
 				<div class="doc-list">
 					<a class="chip" href="dokumenter/fagbrev/fagbrev.jpg" target="_blank" rel="noopener noreferrer" data-no="Fagbrev" data-en="Trade certificate">Fagbrev</a>
 				</div>
 			</div>
 			<article class="topic-item topic-item-vgs">
-				<h3 data-no="Legg til oversikt for Alta videregående skole" data-en="Add overview for Alta upper secondary school">Legg til oversikt for Alta videregående skole</h3>
+				<h3 data-no="Elektriker - Elenergi og ekom" data-en="Electrician - Electrical energy and electronic communications">Elektriker - Elenergi og ekom</h3>
 				<p
-					data-no="Skriv inn program, periode, relevante fag og en kort forklaring av hva du vil fremheve."
-					data-en="Add program, period, relevant subjects and a short explanation of what you want to highlight."
+					data-no="Her fikk jeg fagbrev i elektrikerfaget (meget godt bestått) etter endt læretid hos El-installatøren Alta AS. Opplæringen ga innsikt i elektriske installasjoner, gjeldende regelverk og sikkerhet, kombinert med erfaring i å planlegge, gjennomføre og dokumentere arbeid i henhold til krav.&#10;&#10;Samspillet mellom det teoretiske grunnlaget fra skolen og den praktiske opplæringen i bedrift ga et solid fundament for strukturert arbeid, teknisk forståelse og kvalitet i utførelsen av elektriske installasjoner. Gjennom praksis opparbeidet jeg erfaring med målinger og feilsøking, med tilhørende dokumentasjon og verifikasjon av anlegg.&#10;&#10;Jeg fikk også erfaring fra et bredt spekter av installasjoner, blant annet innen bolig, elbilladere, brannalarmanlegg og kjøle- og fryseanlegg."
+					data-en="Here I obtained my electrician trade certificate (passed with distinction) after completing my apprenticeship at El-installatøren Alta AS. The training provided insight into electrical installations, applicable regulations, and safety, combined with experience in planning, carrying out, and documenting work in accordance with requirements.&#10;&#10;The interaction between the theoretical foundation from school and the practical training in the company provided a solid basis for structured work, technical understanding, and quality in the execution of electrical installations. Through practical work, I gained experience with measurements and troubleshooting, along with associated documentation and verification of installations.&#10;&#10;I also gained experience from a wide range of installations, including housing, EV chargers, fire alarm systems, and refrigeration and freezer systems."
 				>
-					Skriv inn program, periode, relevante fag og en kort forklaring av hva du vil fremheve.
+					Her fikk jeg fagbrev i elektrikerfaget (meget godt bestått) etter endt læretid hos El-installatøren Alta AS. Opplæringen ga innsikt i elektriske installasjoner, gjeldende regelverk og sikkerhet, kombinert med erfaring i å planlegge, gjennomføre og dokumentere arbeid i henhold til krav.
+
+					Samspillet mellom det teoretiske grunnlaget fra skolen og den praktiske opplæringen i bedrift ga et solid fundament for strukturert arbeid, teknisk forståelse og kvalitet i utførelsen av elektriske installasjoner. Gjennom praksis opparbeidet jeg erfaring med målinger og feilsøking, med tilhørende dokumentasjon og verifikasjon av anlegg.
+
+					Jeg fikk også erfaring fra et bredt spekter av installasjoner, blant annet innen bolig, elbilladere, brannalarmanlegg og kjøle- og fryseanlegg.
 				</p>
 			</article>
 		</section>
@@ -142,5 +207,6 @@ Kort om emnet: Fyll inn egen tekst om hva du jobbet med og lærte.</p>
 
 	<script src="../js/education-transition.js"></script>
 	<script src="../js/language.js"></script>
+		<script src="../js/grade-chart.js"></script>
 </body>
 </html>

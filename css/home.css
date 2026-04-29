@@ -127,6 +127,11 @@
   padding: 26px 0 10px;
 }
 
+#contact {
+  margin-bottom: 80px;
+  padding-bottom: 40px;
+}
+
 .section-head {
   padding-top: 26px;
   border-top: 1px solid rgba(255, 255, 255, 0.07);
@@ -140,4 +145,234 @@
 
 .about-actions {
   margin-top: 22px;
+}
+
+/* Career Progression Timeline */
+.career-progression {
+  margin: 64px 0 48px 0;
+  padding: 48px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.progression-timeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  position: relative;
+}
+
+.progression-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.progression-step.active .step-badge {
+  background: linear-gradient(135deg, #4f9ef7 0%, #7b68ee 100%);
+  box-shadow: 0 0 24px rgba(79, 158, 247, 0.4);
+  transform: scale(1.1);
+}
+
+.step-badge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.step-content {
+  text-align: center;
+}
+
+.step-content h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 6px;
+}
+
+.step-content p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.progression-connector {
+  flex: 1;
+  height: 3px;
+  background: linear-gradient(90deg, rgba(79, 158, 247, 0.5) 0%, rgba(123, 104, 238, 0.5) 100%);
+  margin: 0 -1px;
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .progression-timeline {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .progression-connector {
+    width: 3px;
+    height: 40px;
+    margin: 0;
+    background: linear-gradient(180deg, rgba(79, 158, 247, 0.5) 0%, rgba(123, 104, 238, 0.5) 100%);
+  }
+
+  .step-badge {
+    width: 52px;
+    height: 52px;
+    font-size: 20px;
+  }
+
+  .step-content h4 {
+    font-size: 16px;
+  }
+
+  .step-content p {
+    font-size: 12px;
+  }
+}
+
+/* About and Skills Layout */
+.about-skills-section {
+  min-height: 100vh;
+  padding: 5rem 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.about-skills-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-copy {
+  margin: 0;
+}
+
+/* Skills Sidebar */
+.skills-sidebar {
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-sidebar-title {
+  margin: 0 0 2rem 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #5b7cff;
+}
+
+.skills-grid-compact {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+}
+
+.skill-card {
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 1.2rem;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.skill-card::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle at top left,
+    rgba(91, 124, 255, 0.16),
+    transparent 38%
+  );
+  opacity: 0;
+  transition: opacity 220ms ease;
+  pointer-events: none;
+}
+
+.skill-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(91, 124, 255, 0.28);
+  box-shadow:
+    0 0 0 1px rgba(91, 124, 255, 0.08),
+    0 14px 34px rgba(0, 0, 0, 0.34),
+    0 0 28px rgba(91, 124, 255, 0.10);
+}
+
+.skill-card:hover::before {
+  opacity: 1;
+}
+
+.skill-card-compact {
+  min-height: auto;
+}
+
+.skill-card-short {
+  min-height: 180px;
+}
+
+.skill-card-tall {
+  min-height: 230px;
+}
+
+.skill-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: #5b7cff;
+  margin-bottom: 0.8rem;
+}
+
+.skill-card h3,
+.skill-card h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  font-weight: 500;
+  color: #e8edf7;
+}
+
+@media (max-width: 960px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }

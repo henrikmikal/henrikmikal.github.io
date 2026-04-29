@@ -76,6 +76,8 @@ html[lang="en"] .doc-list [data-lang-only="no"] {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0.085), rgba(255, 255, 255, 0.035));
 	box-shadow: 0 10px 28px rgba(0, 0, 0, 0.18);
 	padding: 18px;
+	display: flex;
+	flex-direction: column;
 }
 
 .topic-item h3 {
@@ -88,6 +90,12 @@ html[lang="en"] .doc-list [data-lang-only="no"] {
 	margin: 10px 0 0;
 	color: #cfd7e2;
 	white-space: pre-line;
+}
+
+.topic-item > .grade-badge-container,
+.topic-item > .course-grade {
+	margin-top: auto;
+	align-self: flex-start;
 }
 
 .education-divider {
@@ -149,6 +157,81 @@ html[lang="en"] .doc-list [data-lang-only="no"] {
 .section-headline p {
 	margin: 10px 0 0;
 	color: var(--soft);
+}
+
+.grade-badge-container {
+	position: relative;
+	display: inline-block;
+	margin-top: 16px;
+}
+
+.course-grade {
+	display: block;
+	padding: 8px 14px;
+	border-radius: 8px;
+	background: rgba(34, 197, 94, 0.12);
+	border: 1px solid rgba(34, 197, 94, 0.4);
+	color: #f2f2ef;
+	font-weight: 700;
+	font-size: 0.98rem;
+	width: fit-content;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.course-grade:hover {
+	background: rgba(34, 197, 94, 0.18);
+	border-color: rgba(34, 197, 94, 0.6);
+}
+
+.grade-popup {
+	position: absolute;
+	bottom: calc(100% + 8px);
+	left: 50%;
+	transform: translateX(-50%) scale(0.9);
+	background: rgba(20, 20, 20, 0.98);
+	border: 1px solid rgba(242, 242, 239, 0.2);
+	border-radius: 12px;
+	padding: 16px;
+	width: 50vw;
+	max-width: 360px;
+	min-width: 280px;
+	height: 260px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(34, 197, 94, 0.15);
+	backdrop-filter: blur(10px);
+	opacity: 0;
+	visibility: hidden;
+	transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+	pointer-events: none;
+	z-index: 1000;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.grade-badge-container.is-open .grade-popup,
+	.grade-badge-container .course-grade:focus + .grade-popup {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(-50%) scale(1);
+		pointer-events: none;
+	}
+}
+
+.grade-graph {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border-radius: 8px;
+}
+
+@media (max-width: 700px) {
+	.grade-popup {
+		display: none;
+	}
+
+	.course-grade {
+		cursor: default;
+	}
 }
 
 .education-footer {

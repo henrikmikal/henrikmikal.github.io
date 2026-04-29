@@ -55,6 +55,24 @@
   .intro {
     max-width: 100%;
   }
+
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact-card {
+    min-height: 0;
+  }
+
+  .about-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .skills-grid-compact {
+    grid-template-columns: 2fr 2fr;
+  }
 }
 
 @media (min-width: 961px) {
@@ -91,5 +109,51 @@
   .topbar-actions {
     width: auto;
     justify-content: flex-end;
+  }
+
+  .contact-showcase {
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .contact-intro {
+    font-size: 1.16rem;
+  }
+
+  .contact-card {
+    padding: 26px 18px 22px;
+    border-radius: 20px;
+  }
+
+  .contact-card-icon {
+    width: 86px;
+    height: 86px;
+  }
+
+  .contact-card-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .contact-card h3 {
+    margin-top: 16px;
+    font-size: 1.72rem;
+  }
+
+  .contact-card-action {
+    padding-top: 20px;
+  }
+
+  .about-skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .skills-grid-compact {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    min-height: 100px;
   }
 }
